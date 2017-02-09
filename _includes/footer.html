@@ -1,0 +1,10 @@
+<footer class="global-footer" role="contentinfo">
+
+
+</footer>
+
+
+<script  src="{{ site.baseurl }}/static-assets/js/bundle.js?v={{ site.time | date: '%s' }}"></script>
+{% if page.pagejs %}
+ <script  src="{{ site.baseurl }}/static-assets/js/{{ page.pagejs }}?v={{ site.time | date: '%s' }}"></script>
+{% endif %}

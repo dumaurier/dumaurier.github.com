@@ -1,0 +1,17 @@
+.header{
+  @include zed(hammer);
+  position: fixed;
+  width: 100%;
+  background: $color-red;
+  color: $grey-ghost;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 1px 0 1px 1px $grey-light;
+  padding: 0 1rem;
+
+  h1{
+    @include font-size(2);
+  }
+}

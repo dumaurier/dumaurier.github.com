@@ -1,0 +1,37 @@
+
+.primary-CTA,
+button{
+    @include default-transition();  // What is this for? -jv
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    padding: 15px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 1px 2px $color-blue;
+    }
+
+    &.ghost {
+
+    }
+
+}
+
+//Are these defaults or page specific?
+//If they're defaults should the be in the original block? Why are the selectors over-qualified? -jv
+.primary-CTA.primary,
+button.primary {
+  background: $color-green;
+  color: $color-white;
+  text-decoration: none;
+  &:hover {
+    background: $grey-dark;
+  }
+}

@@ -1,0 +1,33 @@
+---
+title: Workopolis
+timezone: UTC
+destination: _site/
+domainname:
+baseurl:
+assetsurl: /static-assets/
+cobraurl: https://workopolis.com
+collections:
+  products:
+    title: Products
+    output: false
+  uploads:
+    title: Uploads
+    output: true
+name: portfolio
+markdown: kramdown
+highlighter: rouge
+exclude:
+- config
+- screenshots
+- node_modules
+- gulpfile.js
+- package.json
+- src
+- README.md
+- Gemfile
+- Gemfile.lock
+- Dockerfile
+- docker-entrypoint.sh
+port: 4000
+sass:
+  style: :compressed
