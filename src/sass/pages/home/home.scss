@@ -1,3 +1,12 @@
+body{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  height: 100vh;
+  font-family: "source-code-pro",monospace;
+}
+
 main{
-  backgrond: $color-red;
+  //backgrond: $color-red;
+  padding-top: 100px;
 }

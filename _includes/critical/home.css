@@ -1,1 +1,1 @@
-html{box-sizing:border-box}*,*::after,*::before{box-sizing:inherit}main{backgrond:#B20101}
+html{box-sizing:border-box}*,*::after,*::before{box-sizing:inherit}body{display:-ms-flexbox;display:flex;-ms-flex-flow:column nowrap;flex-flow:column nowrap;-ms-flex-pack:justify;justify-content:space-between;height:100vh;font-family:"source-code-pro",monospace}main{padding-top:100px}
