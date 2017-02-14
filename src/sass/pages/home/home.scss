@@ -3,10 +3,15 @@ body{
   flex-flow: column nowrap;
   justify-content: space-between;
   height: 100vh;
-  font-family: "source-code-pro",monospace;
+  background: $color-white-dirty;
 }
 
 main{
-  //backgrond: $color-red;
   padding-top: 100px;
+  @include sans-font(body);
+
+  p{
+    @include font-size(1.125);
+    letter-spacing: 1px;
+  }
 }
