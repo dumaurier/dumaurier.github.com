@@ -6,23 +6,32 @@
     line-height: inherit;
 }
 
+*+*{
+  margin-top: 1rem;
+}
+
+$min_width: 320px;
+$max_width: 1200px;
+$min_font: 16px;
+$max_font: 19px;
+
 html {
     background-color: $color-white;
     color: $color-black;
     font-family: $font-fast;
-    font-size: 100%;
-    line-height: 1.6;
+    @include fluid-type($min_width, $max_width, $min_font, $max_font);
 }
 
 body {
   margin: 0;
   padding: 0;
+  width: 100%;
 }
 
 main {
     display: block;
-    max-width: 100%;
-    width: 100%; //Why are both max-width and width set to 100%?
+    width: inherit;
+    padding: 0 $space-default;
     height: auto;
     margin-top: 70px;
     position: static;
@@ -41,7 +50,7 @@ main {
 
 .block{
    @include clearfix;
-   max-width: 1240px;
+   max-width: 800px;
    margin: 0 auto;
 }
 
@@ -89,4 +98,9 @@ ul,ol{
   main {
     margin-top: 95px;
   }
+}
+
+p code{
+  background: rgba(255,255,153,0.1);
+  padding: 3px;
 }

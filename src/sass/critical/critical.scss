@@ -7,4 +7,32 @@
 @import "../components/header/header";
 @import "../components/footer/footer";
 @import "../framework/buttons";
-  
+
+.article-content{
+  max-width: 95vw;
+  margin: 0 auto;
+
+  header h1{
+    @include sans-font(bold);
+  }
+
+  header h5{
+    margin-top: 0.85rem;
+  }
+}
+
+@include media($mq-small){
+  .article-content{
+    margin-top: 3rem;
+    max-width: 40em;
+
+    header{
+      padding-bottom: 20px;
+      border-bottom: 2px solid $color-blue;
+    }
+
+    h2 + p{
+      font-weight: 500;
+    }
+  }
+}

@@ -1,5 +1,7 @@
 footer{
- background: $color-orange;
- padding: $padding-section;
+  width: 100%;
+  background: $color-white;
+  border-top: 4px solid $color-blue;
+  border-bottom: 4px solid $color-blue;
  clear: both;
 }

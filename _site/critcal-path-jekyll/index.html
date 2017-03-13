@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <script>
+    // https://github.com/filamentgroup/loadCSS
+    !function(e){"use strict"
+    var n=function(n,t,o){function i(e){return f.body?e():void setTimeout(function(){i(e)})}var d,r,a,l,f=e.document,s=f.createElement("link"),u=o||"all"
+    return t?d=t:(r=(f.body||f.getElementsByTagName("head")[0]).childNodes,d=r[r.length-1]),a=f.styleSheets,s.rel="stylesheet",s.href=n,s.media="only x",i(function(){d.parentNode.insertBefore(s,t?d:d.nextSibling)}),l=function(e){for(var n=s.href,t=a.length;t--;)if(a[t].href===n)return e()
+    setTimeout(function(){l(e)})},s.addEventListener&&s.addEventListener("load",function(){this.media=u}),s.onloadcssdefined=l,l(function(){s.media!==u&&(s.media=u)}),s}
+    "undefined"!=typeof exports?exports.loadCSS=n:e.loadCSS=n}("undefined"!=typeof global?global:this)
+  </script>
+
+  <link rel="canonical" href="" />
+  <link rel="icon" href="/favicon.ico">
+  <title>Critical Path CSS and Jekyll</title>
+
+  <!-- Static Meta Tags -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="copyright" content="Josh Vogt 2017" />
+
+  <meta name="description" content="a portfolio site for josh vogt." />
+  <meta name="robots" content="follow, index"  />
+
+  
+
+  
+
+  <style>
+  html{box-sizing:border-box}*,*::after,*::before{box-sizing:inherit}*{box-sizing:border-box;color:inherit;font-family:inherit;line-height:inherit}*+*{margin-top:1rem}html{background-color:#fff;color:#141619;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"}html{font-size:16px}@media screen and (min-width: 320px){html{font-size:calc(16px + 3 * ((100vw - 320px) / 880))}}@media screen and (min-width: 1200px){html{font-size:19px}}body{margin:0;padding:0;width:100%}main{display:block;width:inherit;padding:0 1rem;height:auto;margin-top:70px;position:static}main:focus{outline:none}.container{display:block;width:inherit;margin:0 auto;position:relative}.block{max-width:800px;margin:0 auto}.block::after{content:"";display:block;clear:both}a{color:#02437b;cursor:pointer;text-decoration:underline}a:focus,a:hover{text-decoration:underline}.disabled-link{cursor:not-allowed;color:#f2f4f5}ul,ol{margin:0;padding:0;list-style:none}.visuallyhidden{clip:rect(1px, 1px, 1px, 1px);height:1px;overflow:hidden;position:absolute;width:1px}[href="#main"]{position:absolute;top:0;right:110%}[href="#main"]:focus{right:auto}@media screen and (min-width: 768px){main{margin-top:95px}}p code{background:rgba(255,255,153,0.1);padding:3px}.header{width:100vw;background:#02437b;border-top:4px solid #02437b;border-bottom:4px solid #02437b;padding:0;margin:0}.header h1{font-size:19.2px;font-size:1.2rem;font-family:"source-code-pro", monospace;color:#fdf5ea;text-transform:lowercase;margin:0;padding:5px 10px}.header h1>a{color:inherit;text-decoration:none}footer{width:100%;background:#fff;border-top:4px solid #02437b;border-bottom:4px solid #02437b;clear:both}.primary-CTA,button{transition:all 0.25s ease;border-radius:3px;border:none;cursor:pointer;padding:15px 20px;text-decoration:none;text-transform:uppercase}.primary-CTA:hover,button:hover{text-decoration:none}.primary-CTA:focus,button:focus{outline:none;box-shadow:0 0 1px 2px #02437b}.primary-CTA.primary,button.primary{background:#377D39;color:#fff;text-decoration:none}.primary-CTA.primary:hover,button.primary:hover{background:#25282e}.article-content{max-width:95vw;margin:0 auto}.article-content header h1{font-family:"tablet-gothic", sans-serif;font-weight:600;font-style:normal}.article-content header h5{margin-top:0.85rem}@media screen and (min-width: 768px){.article-content{margin-top:3rem;max-width:40em}.article-content header{padding-bottom:20px;border-bottom:2px solid #02437b}.article-content h2+p{font-weight:500}}
+
+  </style>
+
+  <script>
+  loadCSS('/static-assets/css/base-fast.css?v=1489375207');
+  </script>
+  <script>
+  (function(d) {
+    var config = {
+      kitId: 'veg4nzj',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>
+</head>
+
+
+  <body>
+
+    <header class="header">
+    <a class="a11y-skip" href="#main">skip to content.</a>
+
+    <h1><a href="/">josh vogt. user interface developer.</a></h1>
+
+</header>
+
+
+        <article class="article-content">
+          <header>
+<h1>Creating page specific critical CSS using Gulp and Jekyll's `_includes` directory</h1>
+
+<small>
+  This post will steal about 4  minutes of your life. Sorry.
+</small>
+</header>
+
+<p>
+  When creating landing pages, the same critical CSS wont always include the CSS you need to render the page. If you know that your above the fold content is going to be similar you can use a simpler. more generic approach.
+</p>
+
+<h2>The easy way.</h2>
+<p>
+  Add a file in Jekyll's <code>_includes</code> folder called <code>critical.css</code>.
+</p>
+<p>
+  In the <code>head</code> of you document include the following snippet. This will include all the CSS in your <code>critical.css</code> in the <code>head</code> of each page.
+</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">  <span class="nt">&lt;style </span><span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;</span>
+  
+    <span class="p">{</span><span class="err">%</span> <span class="err">include</span> <span class="err">critical.css</span> <span class="err">%</span><span class="p">}</span>
+    
+  <span class="nt">&lt;/style&gt;</span></code></pre></figure>
+
+<h2>The easy Sass way.</h2>
+<p>
+  Use <code>Scssify</code> to inline critical Sass.</p>
+</p>
+<p>
+  If you prefer to write Sass you can still use <code>_includes</code> folder to inline your critical CSS. You'll need to use Liquid's <code>capture</code> tag and Jekyll's <code>scssify</code> filter. The <code>scssify</code> filter respects the Sass settings in Jekyll's <code>_config.yml</code> file so if it's set to compress Sass it will compress the critical CSS in the <code>head</code> of the document.
+</p>
+<p>
+  Create a Sass file in Jekyll's <code>_includes</code> folder and write some Sass. In the <code>head</code> of you document include the following snippet.
+</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">  <span class="nt">&lt;style </span><span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;</span>
+  
+    <span class="p">{</span><span class="err">%</span> <span class="err">capture</span> <span class="err">critical</span> <span class="err">%</span><span class="p">}</span>
+      <span class="p">{</span><span class="err">%</span> <span class="err">include</span> <span class="err">style.scss</span> <span class="err">%</span><span class="p">}</span>
+    <span class="p">{</span><span class="err">%</span> <span class="err">endcapture</span> <span class="err">%</span><span class="p">}</span>
+
+    <span class="p">{</span><span class="err">{</span> <span class="err">critical</span> <span class="err">|</span> <span class="err">scssify</span> <span class="p">}</span><span class="err">}</span>
+  
+  <span class="nt">&lt;/style&gt;</span></code></pre></figure>
+
+<p>
+   Liquid's <a href="https://help.shopify.com/themes/liquid/tags/variable-tags#capture">capture tag</a> will store the string (in this case the Sass written the aforementioned file) as a variable that you can be referenced later. This snippet: <code>{{ critical | scssify }}</code> will take the captured Sass and convert it CSS that is inlined in the <code>head</code> of the document. If the <code>_config.yml</code> is configured to compress Sass the inlined critical CSS will also be compressed. Fun.
+</p>
+
+<h2>The slightly more complex way that is way more fun.</h2>
+<p>
+  Keep all of your Sass files in the same place and use Gulp (or any task runner) to output compiled CSS into the <code>_includes</code> folder.
+</p>
+
+<p>
+  You don't need to split up your Sass files into the <code>_includes</code> folder and the folder you keep the rest of the sites static assets. Instead you can have a task runner process the critical Sass files and place them in the correct folder for Jekyll to process at build time.
+</p>
+
+<p>
+  This Gulp task will compile all the Sass files in the specified folder and drop them in Jekyll's <code>_includes</code> folder. When Jekyll compiles the site it will follow the same process described above.
+</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'critical'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">'src/sass/critical/*.scss'</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">sass</span><span class="p">({</span>
+            <span class="na">outputStyle</span><span class="p">:</span> <span class="s1">'compressed'</span><span class="p">,</span>
+            <span class="na">includePaths</span><span class="p">:</span> <span class="p">[</span><span class="s1">'scss'</span><span class="p">]</span>
+        <span class="p">}))</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">'_includes/critical'</span><span class="p">));</span>
+<span class="p">});</span></code></pre></figure>
+
+<h2>The way to create page specific critical CSS.</h2>
+<p>
+  Marketing sites or landing pages might need their own critical CSS.
+</p>
+
+<p>
+  If you have a simple blog or a marketing site that doesn't have a lot of visual changes you can probably get away with a single critical CSS implementation. But if you're creating a series of comples landing pages the critical CSS that works great on Page One might be utterly useless on Page Two. Using Jekyll's Front Matter you can create page specific critical CSS with a little extra code.
+</p>
+
+<p>
+  In Page A's Front Matter create a new variable called <em>critical</em> and assign it a value that will match the name of the compiled critical CSS file. So something like <em>pageOneCritical.css</em>.
+</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">---</span>
+<span class="ss">layout: </span><span class="n">page</span>
+<span class="ss">critical: </span><span class="n">pageOneCritical</span><span class="p">.</span><span class="nf">css</span>
+<span class="o">---</span></code></pre></figure>
+
+<p>
+You'll now need to modify the <code>head</code> of the template to react to this bit of Front Matter. You can use an <em>if</em> statement to look for the existence of the critical Font Matter and add it the the page when Jekyll compiles the site.
+</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  
+  <span class="p">{</span><span class="sx">% if </span><span class="n">page</span><span class="p">.</span><span class="nf">critical</span> <span class="sx">%}
+   {% capture critical %}</span>
+    <span class="p">{</span><span class="sx">% include </span><span class="n">critical</span><span class="o">/</span><span class="p">{{</span> <span class="n">page</span><span class="p">.</span><span class="nf">critical</span> <span class="p">}}</span> <span class="o">%</span><span class="p">}</span>
+   <span class="p">{</span><span class="sx">% endcapture </span><span class="o">%</span><span class="p">}</span>
+  <span class="p">{</span><span class="sx">% endif </span><span class="o">%</span><span class="p">}</span>
+
+  <span class="o">&lt;</span><span class="n">style</span><span class="o">&gt;</span>
+    <span class="p">{{</span> <span class="n">critical</span> <span class="p">}}</span>
+  <span class="o">&lt;</span><span class="sr">/style&gt;
+  </span></code></pre></figure>
+
+<p>
+  This will tell Jekyll to check for the existence of the critical variable in the page's Front Matter. If it exists it will capture the compiled CSS that the Gulp task dropped in the <code>_includes</code> folder and inline in the <code>&lt;style></code> element.
+</p>
+
+<p>
+  Regardless of how complex your site is Jekyll makes it easy to include the critical CSS on each page.
+</p>
+
+        </article>
+
+
+
+    <footer class="global-footer" role="contentinfo">
+
+
+</footer>
+
+
+<script  src="/static-assets/js/bundle.js?v=1489375207"></script>
+
+
+
+  </body>
+
+</html>

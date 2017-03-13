@@ -1,16 +1,22 @@
 .header{
-  width: 96vw;
-  background: $color-white-dirty;
-  margin: 2rem auto 0 auto;
+  width: 100vw;
+  background: $color-blue;
   border-top: 4px solid $color-blue;
   border-bottom: 4px solid $color-blue;
-
-
+  padding: 0;
+  margin: 0;
 
   h1{
-    @include font-size(2);
-    @include sans-font(bold);
-    color: $color-blue;
-    text-transform: capitalize;
+    @include font-size(1.2);
+    @include mono-font;
+    color: $color-white-dirty;
+    text-transform: lowercase;;
+    margin: 0;
+    padding: 5px 10px;
+
+    > a{
+      color: inherit;
+      text-decoration: none;
+    }
   }
 }

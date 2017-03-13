@@ -7,7 +7,25 @@ layout: default
 ---
 
 <main class="container">
-  <p>
-    i make websites.
-  </p>
+  <section class="block">
+    <h2>about.</h2>
+    <p>
+      i'm a toronto based ui developer. i make websites.</p>
+  </section>
+
+  <section class="block">
+    <h2>writing.</h2>
+  {% for post in site.posts %}
+    <p>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </p>
+  {% endfor %}
+  </section>
+
+  <section class="block">
+    <h2>contact.</h2>
+    <p>
+      my contact information is available in the console.
+    </p>
+  </section>
 </main>

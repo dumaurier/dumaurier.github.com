@@ -3,7 +3,7 @@ title: Workopolis
 timezone: UTC
 destination: _site/
 domainname:
-baseurl:
+baseurl: /
 assetsurl: /static-assets/
 cobraurl: https://workopolis.com
 collections:
