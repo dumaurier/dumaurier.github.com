@@ -9,6 +9,7 @@
 @import "../framework/buttons";
 
 .article-content{
+  @include sans-font(body);
   max-width: 95vw;
   margin: 0 auto;
 

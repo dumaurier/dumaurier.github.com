@@ -79,7 +79,7 @@ p {
 
 //Text-level semantic styles
  code, pre {
-    font-family: "Courier New", Courier, Monospace;
+    @include mono-font;
     @include font-size(.875);
 }
 
