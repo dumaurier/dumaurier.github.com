@@ -8,7 +8,7 @@
 
   h1{
     @include font-size(1.2);
-    @include mono-font;
+    @include sans-font(bold);
     color: $color-white-dirty;
     text-transform: lowercase;;
     margin: 0;
