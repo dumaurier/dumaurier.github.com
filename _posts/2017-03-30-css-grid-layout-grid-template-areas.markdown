@@ -3,7 +3,7 @@ layout: "article"
 title: "CSS Grid Layout - Grid Template Areas"
 date: "2017-04-15 22:13"
 permalink: /blog/:title/
-published: false;
+published: false
 categories: jekyll
 tags: [jekyll, css, css grid layout]
 ---
