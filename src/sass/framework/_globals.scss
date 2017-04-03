@@ -55,7 +55,7 @@ main {
 }
 
 a {
-    color: $color-blue;
+    color: $color-red;
     cursor: pointer;
     text-decoration: underline;
 
@@ -101,6 +101,6 @@ a {
 }
 
 p code{
-  background: rgba(255,255,153,0.1);
+  background: rgba(255,255,153,0.2);
   padding: 3px;
 }

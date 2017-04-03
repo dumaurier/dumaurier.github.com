@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <script>
+    // https://github.com/filamentgroup/loadCSS
+    !function(e){"use strict"
+    var n=function(n,t,o){function i(e){return f.body?e():void setTimeout(function(){i(e)})}var d,r,a,l,f=e.document,s=f.createElement("link"),u=o||"all"
+    return t?d=t:(r=(f.body||f.getElementsByTagName("head")[0]).childNodes,d=r[r.length-1]),a=f.styleSheets,s.rel="stylesheet",s.href=n,s.media="only x",i(function(){d.parentNode.insertBefore(s,t?d:d.nextSibling)}),l=function(e){for(var n=s.href,t=a.length;t--;)if(a[t].href===n)return e()
+    setTimeout(function(){l(e)})},s.addEventListener&&s.addEventListener("load",function(){this.media=u}),s.onloadcssdefined=l,l(function(){s.media!==u&&(s.media=u)}),s}
+    "undefined"!=typeof exports?exports.loadCSS=n:e.loadCSS=n}("undefined"!=typeof global?global:this)
+  </script>
+
+  <link rel="canonical" href="" />
+  <link rel="icon" href="/favicon.ico">
+  <title>CSS Grid Layout - Understanding Grid Template Areas</title>
+
+  <!-- Static Meta Tags -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="copyright" content="Josh Vogt 2017" />
+
+  <meta name="description" content="a portfolio site for josh vogt." />
+  <meta name="robots" content="follow, index"  />
+
+  
+
+  
+
+  <style>
+  html{box-sizing:border-box}*,*::after,*::before{box-sizing:inherit}*{box-sizing:border-box;color:inherit;font-family:inherit;line-height:inherit}*+*{margin-top:1rem}html{background-color:#fff;color:#141619;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"}html{font-size:16px}@media screen and (min-width: 320px){html{font-size:calc(16px + 3 * ((100vw - 320px) / 880))}}@media screen and (min-width: 1200px){html{font-size:19px}}body{margin:0;padding:0;width:100%}main{display:block;width:inherit;padding:0 1rem;height:auto;margin-top:70px;position:static}main:focus{outline:none}.container{display:block;width:inherit;margin:0 auto;position:relative}.block{max-width:800px;margin:0 auto}.block::after{content:"";display:block;clear:both}a{color:#B20101;cursor:pointer;text-decoration:underline}a:focus,a:hover{text-decoration:underline}.disabled-link{cursor:not-allowed;color:#f2f4f5}.visuallyhidden{clip:rect(1px, 1px, 1px, 1px);height:1px;overflow:hidden;position:absolute;width:1px}[href="#main"]{position:absolute;top:0;right:110%}[href="#main"]:focus{right:auto}@media screen and (min-width: 768px){main{margin-top:95px}}p code{background:rgba(255,255,153,0.2);padding:3px}.header{width:100vw;background:#02437b;border-top:4px solid #02437b;border-bottom:4px solid #02437b;padding:0;margin:0}.header h1{font-size:19.2px;font-size:1.2rem;font-family:"tablet-gothic", sans-serif;font-weight:600;font-style:normal;color:#fdf5ea;text-transform:lowercase;margin:0;padding:5px 10px}.header h1>a{color:inherit;text-decoration:none}footer{width:100%;background:#fff;border-top:4px solid #02437b;border-bottom:4px solid #02437b;clear:both}.primary-CTA,button{transition:all 0.25s ease;border-radius:3px;border:none;cursor:pointer;padding:15px 20px;text-decoration:none;text-transform:uppercase}.primary-CTA:hover,button:hover{text-decoration:none}.primary-CTA:focus,button:focus{outline:none;box-shadow:0 0 1px 2px #02437b}.primary-CTA.primary,button.primary{background:#377D39;color:#fff;text-decoration:none}.primary-CTA.primary:hover,button.primary:hover{background:#25282e}.article-content{font-family:"tablet-gothic", sans-serif;font-weight:400;font-style:normal;max-width:95vw;margin:0 auto}.article-content header h1{font-family:"tablet-gothic", sans-serif;font-weight:600;font-style:normal}.article-content header h5{margin-top:0.85rem}@media screen and (min-width: 768px){.article-content{margin-top:3rem;max-width:40em}.article-content header{padding-bottom:20px;border-bottom:2px solid #02437b}.article-content h2+p{font-weight:500}}
+
+  </style>
+
+  <script>
+  loadCSS('/static-assets/css/base-fast.css');
+  </script>
+  <script>
+  (function(d) {
+    var config = {
+      kitId: 'veg4nzj',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>
+</head>
+
+
+  <body>
+
+    <header class="header">
+    <a class="a11y-skip" href="#main">skip to content.</a>
+
+    <h1><a href="/">josh vogt. </a></h1>
+
+</header>
+
+
+        <article class="article-content">
+          <header>
+<h1>CSS Grid Layout - Understanding Grid Template Areas</h1>
+April 02, 2017
+</header>
+
+<p>This article references the new <a href="https://drafts.csswg.org/css-grid/">CSS Grid Layout Module</a>. More specifically, it covers the <a href="https://drafts.csswg.org/css-grid/#grid-template-areas-property">grid-template-areas</a> property. It is a powerfuly property that lets you visualize your grid in your CSS and explictly place grid items in a named area.</p>
+
+<h2 id="defining-a-simple-grid">Defining a simple grid.</h2>
+
+<p>As simple grid layout could be a page with a sidebar and large content container surronded by a header and footer.The basic markup would consist of something like this:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;main</span> <span class="na">class=</span><span class="s">"grid-container"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"header"</span><span class="nt">&gt;&lt;/header&gt;</span>
+    <span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">"nav"</span><span class="nt">&gt;&lt;/nav&gt;</span>
+    <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"content"</span><span class="nt">&gt;&lt;/section&gt;</span>
+  <span class="nt">&lt;footer</span> <span class="na">class=</span><span class="s">"footer"</span><span class="nt">&gt;&lt;/footer&gt;</span>
+<span class="nt">&lt;/main&gt;</span></code></pre></figure>
+
+<p>The <code class="highlighter-rouge">header</code> and <code class="highlighter-rouge">footer</code> will span the full width of the container while the sidebar will take up about a 25% of the container and the content will fill the rest. To express this with <code class="highlighter-rouge">grid-template-areas</code> I’ll need to apply the following CSS the the <code class="highlighter-rouge">grid-container</code>:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.grid-container</span><span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">grid</span><span class="p">;</span>                      <span class="c">/* 1 */</span>
+  <span class="py">grid-template-columns</span><span class="p">:</span> <span class="m">1</span><span class="n">fr</span> <span class="m">3</span><span class="n">fr</span><span class="p">;</span>     <span class="c">/* 2 */</span>
+  <span class="py">grid-template-rows</span><span class="p">:</span> <span class="m">4rem</span> <span class="nb">auto</span> <span class="m">3rem</span><span class="p">;</span> <span class="c">/* 3 */</span>
+  <span class="py">grid-gap</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>                     <span class="c">/* 4 */</span>
+  <span class="py">grid-template-areas</span><span class="p">:</span>                <span class="c">/* 5 */</span>
+    <span class="s1">" header header "</span>
+    <span class="s1">" nav content "</span>
+    <span class="s1">" footer footer "</span>
+  <span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<ol>
+  <li>Set the <code class="highlighter-rouge">display</code> property to <code class="highlighter-rouge">grid</code>.</li>
+  <li>Use the <code class="highlighter-rouge">grid-template-columns</code> property to set the number of coumns and define their width (in this exampe I’m using the new <a href="https://www.w3.org/TR/2011/WD-css3-values-20110906/#fr-unit">fr unit</a> to set the width of the first column to 1/4 of the available width and content section to 3/4 of the available width.</li>
+  <li>The <code class="highlighter-rouge">grid-template-rows</code> property can be used to define the height of the rows. In this example the <code class="highlighter-rouge">header</code> and <code class="highlighter-rouge">footer</code> will take 4rem and 3rem respectivly and the body content will take up the remaining available space.</li>
+  <li>The <code class="highlighter-rouge">grid-gap</code> property defines the grid’s gutters and is shorthand for <code class="highlighter-rouge">grid-column-gap</code> and <code class="highlighter-rouge">grid-row-gap</code>.</li>
+  <li>This is the fun part. <code class="highlighter-rouge">grid-template-areas</code> defines the areas available in the grid. The name given to grid areas are arbitrary but should be sensible. The <code class="highlighter-rouge">grid-template-areas</code> also provides a crude visual representation of the page layout. Child elements of a grid are assigned to their location using the <code class="highlighter-rouge">grid-area</code> property on the child elements.</li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.header</span><span class="p">{</span>
+ <span class="py">grid-area</span><span class="p">:</span> <span class="n">header</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.nav</span><span class="p">{</span>
+  <span class="py">grid-area</span><span class="p">:</span> <span class="n">nav</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.content</span><span class="p">{</span>
+  <span class="py">grid-area</span><span class="p">:</span> <span class="n">content</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.footer</span><span class="p">{</span>
+  <span class="py">grid-area</span><span class="p">:</span> <span class="n">footer</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>If a height is not set on grid container the <code class="highlighter-rouge">nav</code> and <code class="highlighter-rouge">content</code> areas will take up as much space as they need. See the CodePen example below.</p>
+
+<p data-height="420" data-theme-id="0" data-slug-hash="NpozaQ" data-default-tab="result" data-user="josh_vogt" data-embed-version="2" data-pen-title="Basic CSS Grid Layout" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/josh_vogt/pen/NpozaQ/">Basic CSS Grid Layout</a> by Josh Vogt (<a href="http://codepen.io/josh_vogt">@josh_vogt</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async="" src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<h2 id="creating-a-nested-grid">Creating a nested grid.</h2>
+
+<p>CSS Grid Layout Level 1 was initially meant to include subgrid layout as well but as Rachel Andrew has pointed out, this have been moved to <a href="https://rachelandrew.co.uk/archives/2017/03/16/subgrid-moved-to-level-2-of-the-css-grid-specification/">Level 2 of the CSS Grid specification</a>. However, creating a nested grid is a simple as applying <code class="highlighter-rouge">display: grid;</code> to an element whose parent is a grid container. In this example the simple layout above will have its <code class="highlighter-rouge">content</code> grid-area contain its own two-column grid.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.content</span><span class="p">{</span>
+  <span class="py">grid-area</span><span class="p">:</span> <span class="n">content</span><span class="p">;</span> <span class="c">/* from the previous example */</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">grid</span><span class="p">;</span>
+  <span class="py">grid-template-columns</span><span class="p">:</span> <span class="m">1</span><span class="n">fr</span> <span class="m">1</span><span class="n">fr</span><span class="p">;</span> <span class="c">/* two columns of equal width */</span>
+  <span class="py">grid-gap</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>The nested grid will now contain a two-column grid of items, each column will take 50% of available space.</p>
+
+<p data-height="420" data-theme-id="0" data-slug-hash="RpveZB" data-default-tab="result" data-user="josh_vogt" data-embed-version="2" data-pen-title="Basic CSS Grid Layout with nested grid" class="codepen">See the Pen <a href="http://codepen.io/josh_vogt/pen/RpveZB/">Basic CSS Grid Layout with nested grid</a> by Josh Vogt (<a href="http://codepen.io/josh_vogt">@josh_vogt</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async="" src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<h2 id="learn-more-about-css-grid-layout">Learn more about CSS Grid Layout.</h2>
+
+<p>The two easiest things to do if you want to learn more about CSS Grid Layout is follow <a href="https://twitter.com/rachelandrew">Rachel Andrew</a> and <a href="https://twitter.com/jensimmons">Jen Simmons</a> on Twitter and read their blogs:</p>
+
+<ul>
+  <li><a href="https://rachelandrew.co.uk/archives/">Rachel Andrew’s blog</a></li>
+  <li><a href="http://jensimmons.com/writing">Jen Simmons’ blog</a></li>
+</ul>
+
+        </article>
+
+
+
+    <footer class="global-footer" role="contentinfo">
+
+
+</footer>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-93572722-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script  src="/static-assets/js/bundle.js"></script>
+
+
+
+  </body>
+
+</html>
