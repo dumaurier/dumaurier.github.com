@@ -4,8 +4,8 @@ title: "CSS Grid Layout - Understanding Grid Template Areas"
 date: "2017-04-2 22:13"
 permalink: /blog/:title/
 published: true
-categories: jekyll
-tags: [jekyll, css, css grid layout]
+categories: [css, css grid, layout]
+tags: [css, css grid layout]
 ---
 
 <header>
@@ -48,7 +48,9 @@ The `header` and `footer` will span the full width of the container while the si
 2. Use the `grid-template-columns` property to set the number of coumns and define their width (in this exampe I'm using the new [fr unit](https://www.w3.org/TR/2011/WD-css3-values-20110906/#fr-unit) to set the width of the first column to 1/4 of the available width and content section to 3/4 of the available width.
 3. The `grid-template-rows` property can be used to define the height of the rows. In this example the `header` and `footer` will take 4rem and 3rem respectivly and the body content will take up the remaining available space.
 4. The `grid-gap` property defines the grid's gutters and is shorthand for `grid-column-gap` and `grid-row-gap`.
-5. This is the fun part. `grid-template-areas` defines the areas available in the grid. The name given to grid areas are arbitrary but should be sensible. The `grid-template-areas` also provides a crude visual representation of the page layout. Child elements of a grid are assigned to their location using the `grid-area` property on the child elements.
+5. This is the fun part. `grid-template-areas` defines the areas available in the grid. The name given to grid areas are arbitrary but should be sensible. The `grid-template-areas` also provides a crude visual representation of the page layout.
+
+Child elements of a grid are assigned to their location using the `grid-area` property on the child elements. This is a very simple example but it already demonstrates the power the CSS Grid Layout. Simply changing the name a classes `grid-area` can drastically change the layout.
 
 {% highlight css %}
 .header{
@@ -68,7 +70,7 @@ The `header` and `footer` will span the full width of the container while the si
 }
 {% endhighlight %}
 
-If a height is not set on grid container the `nav` and `content` areas will take up as much space as they need. See the CodePen example below.
+Changing the `grid-area` in the CodePen below can really mess with the layout. In a good way.
 
 <p data-height="420" data-theme-id="0" data-slug-hash="NpozaQ" data-default-tab="result" data-user="josh_vogt" data-embed-version="2" data-pen-title="Basic CSS Grid Layout" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/josh_vogt/pen/NpozaQ/">Basic CSS Grid Layout</a> by Josh Vogt (<a href="http://codepen.io/josh_vogt">@josh_vogt</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
@@ -93,7 +95,13 @@ The nested grid will now contain a two-column grid of items, each column will ta
 
 ## Learn more about CSS Grid Layout.
 
-The two easiest things to do if you want to learn more about CSS Grid Layout is follow [Rachel Andrew](https://twitter.com/rachelandrew) and [Jen Simmons](https://twitter.com/jensimmons) on Twitter and read their blogs:
+The two easiest things to do if you want to learn more about CSS Grid Layout is follow [Rachel Andrew](https://twitter.com/rachelandrew) and [Jen Simmons](https://twitter.com/jensimmons) on Twitter and read their blogs.
 
 - [Rachel Andrew's blog](https://rachelandrew.co.uk/archives/)
 - [Jen Simmons' blog](http://jensimmons.com/writing)
+
+### Other Resources.
+
+- [MDN - CSS Grid Layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout)
+- [CSS Grid Layout Module - Level 1](https://www.w3.org/TR/css3-grid-layout/)
+- [Mozilla - Weird CSS Grid Demo](https://www.mozilla.org/en-US/developer/css-grid/)

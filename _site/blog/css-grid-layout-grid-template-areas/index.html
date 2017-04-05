@@ -97,8 +97,10 @@ April 02, 2017
   <li>Use the <code class="highlighter-rouge">grid-template-columns</code> property to set the number of coumns and define their width (in this exampe I’m using the new <a href="https://www.w3.org/TR/2011/WD-css3-values-20110906/#fr-unit">fr unit</a> to set the width of the first column to 1/4 of the available width and content section to 3/4 of the available width.</li>
   <li>The <code class="highlighter-rouge">grid-template-rows</code> property can be used to define the height of the rows. In this example the <code class="highlighter-rouge">header</code> and <code class="highlighter-rouge">footer</code> will take 4rem and 3rem respectivly and the body content will take up the remaining available space.</li>
   <li>The <code class="highlighter-rouge">grid-gap</code> property defines the grid’s gutters and is shorthand for <code class="highlighter-rouge">grid-column-gap</code> and <code class="highlighter-rouge">grid-row-gap</code>.</li>
-  <li>This is the fun part. <code class="highlighter-rouge">grid-template-areas</code> defines the areas available in the grid. The name given to grid areas are arbitrary but should be sensible. The <code class="highlighter-rouge">grid-template-areas</code> also provides a crude visual representation of the page layout. Child elements of a grid are assigned to their location using the <code class="highlighter-rouge">grid-area</code> property on the child elements.</li>
+  <li>This is the fun part. <code class="highlighter-rouge">grid-template-areas</code> defines the areas available in the grid. The name given to grid areas are arbitrary but should be sensible. The <code class="highlighter-rouge">grid-template-areas</code> also provides a crude visual representation of the page layout.</li>
 </ol>
+
+<p>Child elements of a grid are assigned to their location using the <code class="highlighter-rouge">grid-area</code> property on the child elements. This is a very simple example but it already demonstrates the power the CSS Grid Layout. Simply changing the name a classes <code class="highlighter-rouge">grid-area</code> can drastically change the layout.</p>
 
 <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.header</span><span class="p">{</span>
  <span class="py">grid-area</span><span class="p">:</span> <span class="n">header</span><span class="p">;</span>
@@ -116,7 +118,7 @@ April 02, 2017
   <span class="py">grid-area</span><span class="p">:</span> <span class="n">footer</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>If a height is not set on grid container the <code class="highlighter-rouge">nav</code> and <code class="highlighter-rouge">content</code> areas will take up as much space as they need. See the CodePen example below.</p>
+<p>Changing the <code class="highlighter-rouge">grid-area</code> in the CodePen below can really mess with the layout. In a good way.</p>
 
 <p data-height="420" data-theme-id="0" data-slug-hash="NpozaQ" data-default-tab="result" data-user="josh_vogt" data-embed-version="2" data-pen-title="Basic CSS Grid Layout" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/josh_vogt/pen/NpozaQ/">Basic CSS Grid Layout</a> by Josh Vogt (<a href="http://codepen.io/josh_vogt">@josh_vogt</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async="" src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
@@ -139,11 +141,19 @@ April 02, 2017
 
 <h2 id="learn-more-about-css-grid-layout">Learn more about CSS Grid Layout.</h2>
 
-<p>The two easiest things to do if you want to learn more about CSS Grid Layout is follow <a href="https://twitter.com/rachelandrew">Rachel Andrew</a> and <a href="https://twitter.com/jensimmons">Jen Simmons</a> on Twitter and read their blogs:</p>
+<p>The two easiest things to do if you want to learn more about CSS Grid Layout is follow <a href="https://twitter.com/rachelandrew">Rachel Andrew</a> and <a href="https://twitter.com/jensimmons">Jen Simmons</a> on Twitter and read their blogs.</p>
 
 <ul>
   <li><a href="https://rachelandrew.co.uk/archives/">Rachel Andrew’s blog</a></li>
   <li><a href="http://jensimmons.com/writing">Jen Simmons’ blog</a></li>
+</ul>
+
+<h3 id="other-resources">Other Resources.</h3>
+
+<ul>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout">MDN - CSS Grid Layout</a></li>
+  <li><a href="https://www.w3.org/TR/css3-grid-layout/">CSS Grid Layout Module - Level 1</a></li>
+  <li><a href="https://www.mozilla.org/en-US/developer/css-grid/">Mozilla - Weird CSS Grid Demo</a></li>
 </ul>
 
         </article>
