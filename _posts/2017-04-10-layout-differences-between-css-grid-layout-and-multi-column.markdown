@@ -1,6 +1,6 @@
 ---
 layout: "article"
-title: "Layout Differences Between Grid Layout and Multi-Column Layout"
+title: "Layout Differences Between CSS Grid Layout and Multi-Column Layout"
 date: "2017-04-18 22:17"
 permalink: /blog/:title/
 published: true
@@ -9,7 +9,7 @@ tags: [css, css grid layout]
 ---
 
 <header>
-<h1>Layout Differences Between Grid Layout and Multi-Column Layout</h1>
+<h1>Layout Differences Between CSS Grid Layout and Multi-Column Layout</h1>
 {{ page.date | date: '%B %d, %Y' }}
 </header>
 
