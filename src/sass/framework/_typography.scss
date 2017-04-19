@@ -83,6 +83,10 @@ p {
     @include font-size(.875);
 }
 
+strong{
+  font-weight: 600;
+}
+
  dfn,
  abbr{
     border-bottom:1px dotted $grey;

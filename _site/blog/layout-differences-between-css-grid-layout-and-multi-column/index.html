@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <script>
+    // https://github.com/filamentgroup/loadCSS
+    !function(e){"use strict"
+    var n=function(n,t,o){function i(e){return f.body?e():void setTimeout(function(){i(e)})}var d,r,a,l,f=e.document,s=f.createElement("link"),u=o||"all"
+    return t?d=t:(r=(f.body||f.getElementsByTagName("head")[0]).childNodes,d=r[r.length-1]),a=f.styleSheets,s.rel="stylesheet",s.href=n,s.media="only x",i(function(){d.parentNode.insertBefore(s,t?d:d.nextSibling)}),l=function(e){for(var n=s.href,t=a.length;t--;)if(a[t].href===n)return e()
+    setTimeout(function(){l(e)})},s.addEventListener&&s.addEventListener("load",function(){this.media=u}),s.onloadcssdefined=l,l(function(){s.media!==u&&(s.media=u)}),s}
+    "undefined"!=typeof exports?exports.loadCSS=n:e.loadCSS=n}("undefined"!=typeof global?global:this)
+  </script>
+
+  <link rel="canonical" href="" />
+  <link rel="icon" href="/favicon.ico">
+  <title>Layout Differences Between Grid Layout and Multi-Column Layout</title>
+
+  <!-- Static Meta Tags -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="copyright" content="Josh Vogt 2017" />
+
+  <meta name="description" content="a portfolio site for josh vogt." />
+  <meta name="robots" content="follow, index"  />
+
+  
+
+  
+
+  <style>
+  html{box-sizing:border-box}*,*::after,*::before{box-sizing:inherit}*{box-sizing:border-box;color:inherit;font-family:inherit;line-height:inherit}*+*{margin-top:1rem}html{background-color:#fff;color:#141619;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"}html{font-size:16px}@media screen and (min-width: 320px){html{font-size:calc(16px + 3 * ((100vw - 320px) / 880))}}@media screen and (min-width: 1200px){html{font-size:19px}}body{margin:0;padding:0;width:100%}main{display:block;width:inherit;padding:0 1rem;height:auto;margin-top:70px;position:static}main:focus{outline:none}.container{display:block;width:inherit;margin:0 auto;position:relative}.block{max-width:800px;margin:0 auto}.block::after{content:"";display:block;clear:both}a{color:#02437b;cursor:pointer;text-decoration:underline}a:focus,a:hover{text-decoration:underline}.disabled-link{cursor:not-allowed;color:#f2f4f5}.visuallyhidden{clip:rect(1px, 1px, 1px, 1px);height:1px;overflow:hidden;position:absolute;width:1px}[href="#main"]{position:absolute;top:0;right:110%}[href="#main"]:focus{right:auto}@media screen and (min-width: 768px){main{margin-top:95px}}p code{background:rgba(255,255,153,0.2);padding:3px}header+p{font-size:18px;font-size:1.125rem}.header{width:100vw;background:#02437b;border-top:4px solid #02437b;border-bottom:4px solid #02437b;padding:0;margin:0}.header h1{font-size:19.2px;font-size:1.2rem;font-family:"tablet-gothic", sans-serif;font-weight:600;font-style:normal;color:#fdf5ea;text-transform:lowercase;margin:0;padding:5px 10px}.header h1>a{color:inherit;text-decoration:none}footer{width:100%;background:#fff;border-top:4px solid #02437b;border-bottom:4px solid #02437b;clear:both}.primary-CTA,button{transition:all 0.25s ease;border-radius:3px;border:none;cursor:pointer;padding:15px 20px;text-decoration:none;text-transform:uppercase}.primary-CTA:hover,button:hover{text-decoration:none}.primary-CTA:focus,button:focus{outline:none;box-shadow:0 0 1px 2px #02437b}.primary-CTA.primary,button.primary{background:#377D39;color:#fff;text-decoration:none}.primary-CTA.primary:hover,button.primary:hover{background:#25282e}.article-content{font-family:"tablet-gothic", sans-serif;font-weight:400;font-style:normal;max-width:95vw;margin:0 auto}.article-content header h1{font-family:"tablet-gothic", sans-serif;font-weight:600;font-style:normal}.article-content header h5{margin-top:0.85rem}@media screen and (min-width: 768px){.article-content{margin-top:3rem;max-width:40em}.article-content header{padding-bottom:20px;border-bottom:2px solid #02437b}.article-content h2+p{font-weight:500}}
+
+  </style>
+
+  <script>
+  loadCSS('/static-assets/css/base-fast.css');
+  </script>
+  <script>
+  (function(d) {
+    var config = {
+      kitId: 'veg4nzj',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>
+</head>
+
+
+  <body>
+
+    <header class="header">
+    <a class="a11y-skip" href="#main">skip to content.</a>
+
+    <h1><a href="/">josh vogt. </a></h1>
+
+</header>
+
+
+        <article class="article-content">
+          <header>
+<h1>Layout Differences Between Grid Layout and Multi-Column Layout</h1>
+April 18, 2017
+</header>
+
+<p>CSS Grid Layout and Multi-Column Layout share one key feature: the ability to layout content in columns. The important difference is multi-column is best suited for laying out the content of an element while grid layout is best suited for layout a page.</p>
+
+<h2 id="refer-to-the-spec">Refer to the spec.</h2>
+
+<p>Multi-column allows CSS authors to create a type of container called a <code class="highlighter-rouge">column box</code>. As the spec says, “The content of a multicol element is flowed into its column boxes.” Neither grid nor flexbox containers allow content to flow because they lack the concept of the column box. Depending on how the grid is defined CSS Grid Layout will assign each element on the grid container to its own grid track.</p>
+
+<p><strong>From the Multi-Column Layout Spec:</strong></p>
+
+<blockquote cite="https://drafts.csswg.org/static/css-multicol/#introduction">
+<p>This module describes multi-column layout in CSS. By using functionality described in this document, style sheets can declare that the content of an element is to be laid out in multiple columns.</p>
+  <cite><a href="https://drafts.csswg.org/static/css-multicol/#introduction">CSS Multi-column Layout Module Level 1</a></cite>
+</blockquote>
+
+<p><strong>From the CSS Grid Layout Spec:</strong></p>
+
+<blockquote cite="https://drafts.csswg.org/css-grid/#intro">
+<p>
+Grid Layout is a new layout model for CSS that has powerful abilities to control the sizing and positioning of boxes and their contents. Unlike Flexible Box Layout, which is single-axis–oriented, Grid Layout is optimized for 2-dimensional layouts: those in which alignment of content is desired in both dimensions.</p>
+<cite><a href="https://drafts.csswg.org/css-grid/#intro">CSS Grid Layout Module Level 1</a></cite>
+</blockquote>
+
+<h3 id="multicol-example">Multicol example.</h3>
+
+<p>This multicol example show two sentences flowing between two column boxes. The height of each column will be filled with content before it flows into the next column box.</p>
+
+<p data-height="520" data-theme-id="0" data-slug-hash="028aa7c1e4c221332024b555aa8f4394" data-default-tab="result" data-user="josh_vogt" data-embed-version="2" data-pen-title="CSS Multicol Example" class="codepen">See the Pen <a href="https://codepen.io/josh_vogt/pen/028aa7c1e4c221332024b555aa8f4394/">CSS Multicol Example</a> by Josh Vogt (<a href="http://codepen.io/josh_vogt">@josh_vogt</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async="" src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<h3 id="css-grid-layout-example">CSS grid layout example.</h3>
+
+<p>This grid layout example show the same two sentences laid out in a simple two column grid. Instead of politing flowing between the two columns grid layout assigns each element to its own grid track. While the columns will be equal height their content will not.</p>
+
+<p data-height="520" data-theme-id="0" data-slug-hash="20b289f291828106d28228358e27bbe5" data-default-tab="result" data-user="josh_vogt" data-embed-version="2" data-pen-title="Grid 2 Column" class="codepen">See the Pen <a href="https://codepen.io/josh_vogt/pen/20b289f291828106d28228358e27bbe5/">Grid 2 Column</a> by Josh Vogt (<a href="http://codepen.io/josh_vogt">@josh_vogt</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async="" src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<p>The grid example gets even less compelling if the available contents exist in a single element as the grid container with 2 columns will create an empty grid track. Multicols ability to gracefully flow content between column boxes isn’t something that can achieved with other CSS layout techniques. I’m sure if someone felt so inclined they could write some JS that would do it - but if CSS already does it so nicely there’s really no reason to.</p>
+
+<h2 id="a-case-where-css-grid-layout-might-be-better-than-multicol">A case where CSS grid layout might be better than multicol.</h2>
+
+<p>Lists are one of the few examples where CSS Grid Layout might work over Multicol though it depends on how you want the items to be displayed. Remember that multicol will let the content flow from column box to column box so the list will flow down to the bottom of the first column box then move to the top of the second column box.</p>
+
+<p data-height="265" data-theme-id="0" data-slug-hash="fdce8ea3c4254615d41d1b16db84c852" data-default-tab="result" data-user="josh_vogt" data-embed-version="2" data-pen-title="Multicol list" class="codepen">See the Pen <a href="https://codepen.io/josh_vogt/pen/fdce8ea3c4254615d41d1b16db84c852/">Multicol list</a> by Josh Vogt (<a href="http://codepen.io/josh_vogt">@josh_vogt</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async="" src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<p>On the other hand a grid container, using a simple two column grid, will place the the grid items automatically along the column axis until there are no more available grid cells available. It will then move down along the row axis to find the next grid cell. In the case of my alphabetical list of mostly real food the items will be place left to right on a per row basis.</p>
+
+<p data-height="265" data-theme-id="0" data-slug-hash="d9beba89e279fc15f1cf506f73d7293b" data-default-tab="result" data-user="josh_vogt" data-embed-version="2" data-pen-title="Grid List" class="codepen">See the Pen <a href="https://codepen.io/josh_vogt/pen/d9beba89e279fc15f1cf506f73d7293b/">Grid List</a> by Josh Vogt (<a href="http://codepen.io/josh_vogt">@josh_vogt</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async="" src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<h3 id="resources">Resources.</h3>
+
+<ul>
+  <li><a href="https://drafts.csswg.org/css-grid/">CSS Grid Layout Module - Level 1</a></li>
+  <li><a href="https://drafts.csswg.org/static/css-multicol/">CSS Multi-column Layout Module Level 1</a></li>
+</ul>
+
+<p>Corrections or comment can be directed to my twitter account <a href="https://twitter.com/jshvgt">@jshvgt</a>.</p>
+
+        </article>
+
+
+
+    <footer class="global-footer" role="contentinfo">
+
+
+</footer>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-93572722-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script  src="/static-assets/js/bundle.js"></script>
+
+
+
+  </body>
+
+</html>

@@ -55,7 +55,7 @@ main {
 }
 
 a {
-    color: $color-red;
+    color: $color-blue;
     cursor: pointer;
     text-decoration: underline;
 
@@ -103,4 +103,8 @@ a {
 p code{
   background: rgba(255,255,153,0.2);
   padding: 3px;
+}
+
+header + p{
+  @include font-size(1.125);
 }
