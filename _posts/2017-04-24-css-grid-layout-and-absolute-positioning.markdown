@@ -1,7 +1,7 @@
 ---
 layout: "article"
 title: "CSS Grid Layout and Absolute Positioning"
-date: "2017-04-24 22:46"
+date: "2017-04-26 22:46"
 permalink: /blog/:title/
 published: true
 categories: [css, css grid, layout]
