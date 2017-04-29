@@ -108,3 +108,7 @@ p code{
 header + p{
   @include font-size(1.125);
 }
+
+.article-content img{
+  max-width: 100%;
+}

@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="//feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="//feed.xml" rel="self" type="application/atom+xml" /><link href="//" rel="alternate" type="text/html" /><updated>2017-04-29T02:33:48+00:00</updated><id>///</id><title type="html">Josh Vogt</title><entry><title type="html">CSS Grid Layout and Absolute Positioning</title><link href="//blog/css-grid-layout-and-absolute-positioning/" rel="alternate" type="text/html" title="CSS Grid Layout and Absolute Positioning" /><published>2017-04-26T22:46:00+00:00</published><updated>2017-04-26T22:46:00+00:00</updated><id>//blog/css-grid-layout-and-absolute-positioning</id><content type="html" xml:base="//blog/css-grid-layout-and-absolute-positioning/">&lt;header&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="//feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="//feed.xml" rel="self" type="application/atom+xml" /><link href="//" rel="alternate" type="text/html" /><updated>2017-04-29T16:47:20+00:00</updated><id>///</id><title type="html">Josh Vogt</title><entry><title type="html">CSS Grid Layout and Absolute Positioning</title><link href="//blog/css-grid-layout-and-absolute-positioning/" rel="alternate" type="text/html" title="CSS Grid Layout and Absolute Positioning" /><published>2017-04-26T22:46:00+00:00</published><updated>2017-04-26T22:46:00+00:00</updated><id>//blog/css-grid-layout-and-absolute-positioning</id><content type="html" xml:base="//blog/css-grid-layout-and-absolute-positioning/">&lt;header&gt;
 &lt;h1&gt;CSS Grid Layout and Absolute Positioning&lt;/h1&gt;
 April 26, 2017
 &lt;/header&gt;
 
 &lt;p&gt;A quick explanation of &lt;code class=&quot;highlighter-rouge&quot;&gt;absolute&lt;/code&gt; positioning when used with CSS Grid Layout.&lt;/p&gt;
 
-&lt;h2 id=&quot;position-absolute-amp-css-grid-layout&quot;&gt;position: absolute; &amp;amp; css grid layout&lt;/h2&gt;
+&lt;h2 id=&quot;position-absolute-amp-css-grid-layout&quot;&gt;position: absolute; &amp;amp; css grid layout.&lt;/h2&gt;
 
 &lt;p&gt;CSS Grid Layout allows elements with absolute positioning to be placed along a grid containers grid lines. But as with any elements that use absolute or fixed positioning things can get weird in a hurry if you’re not careful. Here’s what the spec says about absolute positioning:&lt;/p&gt;
 
@@ -17,6 +17,57 @@ April 26, 2017
   &lt;/a&gt;&lt;/cite&gt;
 &lt;/blockquote&gt;
 
+&lt;h2 id=&quot;how-it-works&quot;&gt;how it works.&lt;/h2&gt;
+
+&lt;p&gt;When setting up your grid, add &lt;code class=&quot;highlighter-rouge&quot;&gt;position: relative;&lt;/code&gt; to the grid container:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.grid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;grid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;py&quot;&gt;grid-template-columns&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;repeat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;py&quot;&gt;grid-template-rows&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;repeat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;relative&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;/* creates absolute positioning containing block */&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.absolute-item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;absolute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;20px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;bottom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;40px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;This will create an absolutely positioned item that behaves the same way it would if its parent had its display property set to &lt;code class=&quot;highlighter-rouge&quot;&gt;block;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p data-height=&quot;447&quot; data-theme-id=&quot;0&quot; data-slug-hash=&quot;ee10495ea7f47a81e3abe7960f6af159&quot; data-default-tab=&quot;css,result&quot; data-user=&quot;josh_vogt&quot; data-embed-version=&quot;2&quot; data-pen-title=&quot;ee10495ea7f47a81e3abe7960f6af159&quot; class=&quot;codepen&quot;&gt;See the Pen &lt;a href=&quot;https://codepen.io/josh_vogt/pen/ee10495ea7f47a81e3abe7960f6af159/&quot;&gt;ee10495ea7f47a81e3abe7960f6af159&lt;/a&gt; by Josh Vogt (&lt;a href=&quot;http://codepen.io/josh_vogt&quot;&gt;@josh_vogt&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async=&quot;&quot; src=&quot;https://production-assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;If you define a grid area to contain the element the offset properties like &lt;code class=&quot;highlighter-rouge&quot;&gt;top&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;left&lt;/code&gt; will apply to the outer grid lines of the absolutely positioned element. In this case, the abspos item has been given a large grid area defined as:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.grid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;grid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;py&quot;&gt;grid-template-columns&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;repeat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;py&quot;&gt;grid-template-rows&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;repeat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;relative&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;/* creates absolute positioning containing block */&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.absolute-item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;grid-row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;grid-column&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;-1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;absolute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;20px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;bottom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;40px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;You can see the example on CodePen &lt;a href=&quot;https://codepen.io/josh_vogt/pen/67cbf4ac487883abf4cfa6aa2a711bb4&quot;&gt;here&lt;/a&gt; but it’s best to see what’s happening using Firefox’s grid inspector:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../static-assets/images/grid-area.png&quot; alt=&quot;Image of Firefox's grid inspector showing layout&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The abspos item is aligned to its grid area and the offsets are applied after its position in the grid is applied.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-absolute-positioning-impacts-grid-layout&quot;&gt;how absolute positioning impacts grid layout.&lt;/h2&gt;
+
 &lt;p&gt;One thing to keep in mind when using &lt;code class=&quot;highlighter-rouge&quot;&gt;position: absolute&lt;/code&gt; on an element of a grid container is that the normal rules of absolute positioning apply. This means that while you will be able to align the element to the containers grid lines, the positioned element won’t take up any space in the grid nor will it effect the layout of other grid items.&lt;/p&gt;
 
 &lt;p&gt;This CodePen demonstrates a simple grid with an aboslutely positioned element:&lt;/p&gt;
@@ -26,7 +77,15 @@ April 26, 2017
 
 &lt;p&gt;The grid items in this demo are layed out using numeric indexes and spans, auto placement and absolute positioning. Absolute positioning allows you to place grid items above or below the positioned element. Overlapping grid items can also be done by assigning items to the same parts of the grid using the &lt;code class=&quot;highlighter-rouge&quot;&gt;grid-row&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;grid-column&lt;/code&gt; or the &lt;code class=&quot;highlighter-rouge&quot;&gt;grid-area&lt;/code&gt; but this will impact how other grid items are aligned to the grid.&lt;/p&gt;
 
-&lt;h2 id=&quot;learn-more-about-css-grid-layout&quot;&gt;Learn more about CSS Grid Layout.&lt;/h2&gt;
+&lt;h2 id=&quot;summary&quot;&gt;summary.&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;absolutely positioned items can be aligned to either a grid container or a defined grid area&lt;/li&gt;
+  &lt;li&gt;if an aboslutely positioned item is assigned a grid area, offset properties area applied based on the grid areas grid lines&lt;/li&gt;
+  &lt;li&gt;as with anything that is absolutely positioned, it will be pulled from the document flow and will not impact the layout of other elements&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;learn-more-about-css-grid-layout&quot;&gt;Learn more about CSS Grid Layout.&lt;/h3&gt;
 
 &lt;p&gt;The two easiest things to do if you want to learn more about CSS Grid Layout is follow &lt;a href=&quot;https://twitter.com/rachelandrew&quot;&gt;Rachel Andrew&lt;/a&gt; and &lt;a href=&quot;https://twitter.com/jensimmons&quot;&gt;Jen Simmons&lt;/a&gt; on Twitter and read their blogs.&lt;/p&gt;
 
