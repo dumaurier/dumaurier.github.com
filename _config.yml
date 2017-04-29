@@ -1,18 +1,10 @@
 ---
-title: Workopolis
+title: Josh Vogt
 timezone: UTC
 destination: _site/
 domainname:
 baseurl: /
 assetsurl: /static-assets/
-cobraurl: https://workopolis.com
-collections:
-  products:
-    title: Products
-    output: false
-  uploads:
-    title: Uploads
-    output: true
 name: portfolio
 markdown: kramdown
 highlighter: rouge
@@ -31,3 +23,5 @@ exclude:
 port: 4000
 sass:
   style: :compressed
+gems:
+  - jekyll-feed
