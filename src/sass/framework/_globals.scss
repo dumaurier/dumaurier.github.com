@@ -58,6 +58,10 @@ a {
     color: $color-blue;
     cursor: pointer;
     text-decoration: underline;
+    text-decoration-color: $color-red;
+    -webkit-text-decoration-color: $color-red;
+    -webkit-text-decoration-skip: edges;
+    text-decoration-skip:edges;
 
     &:focus, &:hover {
         text-decoration: underline;
@@ -100,7 +104,8 @@ a {
   }
 }
 
-p code{
+p code,
+li code{
   background: rgba(255,255,153,0.2);
   padding: 3px;
 }
