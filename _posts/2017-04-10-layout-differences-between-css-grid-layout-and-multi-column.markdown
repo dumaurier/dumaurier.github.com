@@ -6,6 +6,7 @@ permalink: /blog/:title/
 published: true
 categories: [css, css grid, layout]
 tags: [css, css grid layout]
+short-desc: A rundown of the obvious and no so obvious differences between CSS Grid layout and Multi-Column layout. 
 ---
 
 <header>

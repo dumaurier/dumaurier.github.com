@@ -6,6 +6,7 @@ permalink: /blog/:title/
 published: true
 categories: [css, css grid, layout]
 tags: [css, css grid layout]
+short-desc: A quick explanation of absolute positioning and CSS Grid Layout. How do offset properties work with CSS Grid? How does it impact the placement of other grid items?
 ---
 
 <header>
@@ -110,4 +111,4 @@ The two easiest things to do if you want to learn more about CSS Grid Layout is 
 - [CSS Grid Layout Module - Level 1](https://www.w3.org/TR/css3-grid-layout/)
 - [Mozilla - Weird CSS Grid Demo](https://www.mozilla.org/en-US/developer/css-grid/)
 
-Corrections or comment can be directed to my twitter account [@jshvgt](https://twitter.com/jshvgt).
+Corrections or comments can be directed to my twitter account [@jshvgt](https://twitter.com/jshvgt).

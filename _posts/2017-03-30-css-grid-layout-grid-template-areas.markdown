@@ -6,6 +6,7 @@ permalink: /blog/:title/
 published: true
 categories: [css, css grid, layout]
 tags: [css, css grid layout]
+short-desc: An introduciton on the basics of grid-template-areas in CSS Grid layout. It's one the most powerful features in the spec.
 ---
 
 <header>

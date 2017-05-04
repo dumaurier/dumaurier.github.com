@@ -20,6 +20,9 @@ published: true
         {% for post in site.posts %}
         <li>
           <a href="{{ post.url }}">{{ post.title }} - {{ post.date | date: '%B %d, %Y' }}</a>
+          <p>
+            {{post.short-desc}}
+          </p>
         </li>
 
         {% endfor %}
