@@ -6,7 +6,7 @@ permalink: /blog/:title/
 published: true
 categories: [css, css grid, layout, a11y]
 tags: [css, css grid layout]
-short-desc: Create an inclusive mobile-first responsive off-canvas navigation using CSS Grid Layout. There's probably as much on accessibility in this article than there is on CSS Grid Layout. 
+short-desc: Create an inclusive mobile-first responsive off-canvas navigation using CSS Grid Layout. There's probably as much on accessibility in this article than there is on CSS Grid Layout.
 ---
 
 <header>
@@ -18,6 +18,8 @@ Off-canvas navigation is a popular UI interaction in repsonsive design. CSS Grid
 
 The final [CSS Grid Layout: Off-canvas demo](/CSS-Grid-Layout-Examples/off-canvas) can be accessed by clicking the link.
 
+A stripped down version of this demo is available on [CodePen](https://codepen.io/josh_vogt/pen/GmMWgK/).
+
 ## The base HTML and CSS.
 
 The basic structure of the page is fairly simple.
@@ -26,7 +28,7 @@ The basic structure of the page is fairly simple.
 <main class="grid">
   <header class="main-header">
   </header>
-  <nav class="main-nav" id="main-nav">
+  <nav class="main-nav js-nav" id="main-nav">
   </nav>
   <div class="main-content">
   </div>
@@ -58,7 +60,7 @@ The simplified placement of the grid items is as follows:
 
 .main-nav{
   grid-row: 2;
-  grid-column: 1 / -1; /* on mobile, the nav will take the entire viewport */
+  grid-column: 1;
   z-index: 200; /* sets the stacking order of this grid item above the .main-content */
 }
 
