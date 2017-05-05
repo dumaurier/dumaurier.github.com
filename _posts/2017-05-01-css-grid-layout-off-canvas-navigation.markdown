@@ -14,7 +14,7 @@ short-desc: Create an inclusive mobile-first responsive off-canvas navigation us
 {{ page.date | date: '%B %d, %Y' }}
 </header>
 
-Off-canvas navigation is a popular UI interaction in repsonsive design. CSS Grid Layout makes adjusting the interaction for different device widths easy thanks to its ability to overlay items. I hate writing intros.
+Off-canvas navigation is a popular UI interaction in repsonsive design. CSS Grid Layout makes adjusting the interaction for different device widths easy thanks to its ability to overlay items.
 
 The final [CSS Grid Layout: Off-canvas demo](/CSS-Grid-Layout-Examples/off-canvas) can be accessed by clicking the link.
 
