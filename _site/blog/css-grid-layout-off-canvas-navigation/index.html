@@ -87,7 +87,7 @@ May 02, 2017
   <span class="nt">&lt;/footer&gt;</span>
 <span class="nt">&lt;/main&gt;</span></code></pre></figure>
 
-<p>When the grid is defined, I’ll want to assign the <code class="highlighter-rouge">main-nav</code> and <code class="highlighter-rouge">main-content</code> to the same <code class="highlighter-rouge">grid-row</code> regardless of viewport size. Whether or not the <code class="highlighter-rouge">main-nav</code> is visible and how wide it is will depend on the viewport.</p>
+<p>When the grid is defined, We’ll want to assign the <code class="highlighter-rouge">main-nav</code> and <code class="highlighter-rouge">main-content</code> to the same <code class="highlighter-rouge">grid-row</code> regardless of viewport size. Whether or not the <code class="highlighter-rouge">main-nav</code> is visible and how wide it is will depend on the viewport.</p>
 
 <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.grid</span><span class="p">{</span>
   <span class="nl">display</span><span class="p">:</span> <span class="n">grid</span><span class="p">;</span>
@@ -121,7 +121,7 @@ May 02, 2017
   <span class="nl">grid-column</span><span class="p">:</span> <span class="m">1</span> <span class="p">/</span> <span class="m">-1</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>Now that the basic grid is defined, some CSS is needed on the <code class="highlighter-rouge">main-nav</code> to push it off the viewport and rule to trigger the animation when the class <code class="highlighter-rouge">is-active</code> is present.</p>
+<p>Now that the basic grid is defined, some CSS is needed on the <code class="highlighter-rouge">main-nav</code> to push it off the viewport and a rule to trigger the animation when the class <code class="highlighter-rouge">is-active</code> is present.</p>
 
 <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.main-nav</span><span class="p">{</span>
   <span class="nl">grid-row</span><span class="p">:</span> <span class="m">2</span><span class="p">;</span>
@@ -148,9 +148,9 @@ May 02, 2017
 
 <h3 id="bigger-screens">Bigger Screens</h3>
 
-<p>Those pesky users are always switching up devices, resizing their browsers windows and even looking at websites on their teevees! So we’ll need to adjust the grid layout from its mobile first version to support an unknown number of device widths.</p>
+<p>We’ll need to adjust the grid layout from its mobile first version to support an unknown number of device widths.</p>
 
-<p>Once the viewport gets too wide that it would be weird to have the off-canvas menu take up the full width we’ll want to adjust the grid. I’ve set it at 45em/720px. This requires changes to the <code class="highlighter-rouge">grid</code> container and the <code class="highlighter-rouge">main-nav</code> container:</p>
+<p>Once the viewport gets too wide that it would be weird to have the off-canvas menu take up the full width so we’ll want to adjust the grid. I’ve set it at 45em/720px. This only requires a change to the <code class="highlighter-rouge">grid</code> container:</p>
 
 <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="k">@media</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">45em</span><span class="p">){</span>
 <span class="nc">.grid</span><span class="p">{</span>
@@ -160,7 +160,7 @@ May 02, 2017
 
 <p>That’s it.</p>
 
-<p>The <code class="highlighter-rouge">grid-row</code> and <code class="highlighter-rouge">grid-column</code> properties that defined the grid index placement in the mobile version still work in the 720px and wider version. By adjusting the values of the <code class="highlighter-rouge">grid-template-columns</code> property on the <code class="highlighter-rouge">.grid</code> class it just works on larger screens. The difference is the grid’s first column is now set to 240px and the rest of the content can span across 4 equal units. All of the rules that were applied to the <code class="highlighter-rouge">main-nav</code> class above are all still valid here as well.</p>
+<p>The <code class="highlighter-rouge">grid-row</code> and <code class="highlighter-rouge">grid-column</code> properties that defined the grid index placement in the mobile version still work in the 720px and wider version. By adjusting the values of the <code class="highlighter-rouge">grid-template-columns</code> property on the <code class="highlighter-rouge">.grid</code> class it just works on larger screens. The difference is the grid’s first column is now set to 240px and the rest of the content can span across 4 equal units plus the 240px reserved for the nav. All of the rules that were applied to the <code class="highlighter-rouge">main-nav</code> class above are all still valid here as well.</p>
 
 <h3 id="biggerer-screens">Bigger(er) Screens</h3>
 

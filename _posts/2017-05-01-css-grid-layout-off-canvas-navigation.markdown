@@ -37,7 +37,7 @@ The basic structure of the page is fairly simple.
 </main>
 {% endhighlight %}
 
-When the grid is defined, I'll want to assign the `main-nav` and `main-content` to the same `grid-row` regardless of viewport size. Whether or not the `main-nav` is visible and how wide it is will depend on the viewport.
+When the grid is defined, We'll want to assign the `main-nav` and `main-content` to the same `grid-row` regardless of viewport size. Whether or not the `main-nav` is visible and how wide it is will depend on the viewport.
 
 {% highlight css %}
 .grid{
@@ -75,7 +75,7 @@ The simplified placement of the grid items is as follows:
 }
 {% endhighlight %}
 
-Now that the basic grid is defined, some CSS is needed on the `main-nav` to push it off the viewport and rule to trigger the animation when the class `is-active` is present.
+Now that the basic grid is defined, some CSS is needed on the `main-nav` to push it off the viewport and a rule to trigger the animation when the class `is-active` is present.
 
 {% highlight css %}
 .main-nav{
@@ -102,9 +102,9 @@ Now that the basic grid is defined, some CSS is needed on the `main-nav` to push
 
 ### Bigger Screens
 
-Those pesky users are always switching up devices, resizing their browsers windows and even looking at websites on their teevees! So we'll need to adjust the grid layout from its mobile first version to support an unknown number of device widths.
+We'll need to adjust the grid layout from its mobile first version to support an unknown number of device widths.
 
-Once the viewport gets too wide that it would be weird to have the off-canvas menu take up the full width we'll want to adjust the grid. I've set it at 45em/720px. This requires changes to the `grid` container and the `main-nav` container:
+Once the viewport gets too wide that it would be weird to have the off-canvas menu take up the full width so we'll want to adjust the grid. I've set it at 45em/720px. This only requires a change to the `grid` container:
 
 {% highlight css %}
 @media screen and (min-width: 45em){
@@ -116,7 +116,7 @@ Once the viewport gets too wide that it would be weird to have the off-canvas me
 
 That's it.
 
-The `grid-row` and `grid-column` properties that defined the grid index placement in the mobile version still work in the 720px and wider version. By adjusting the values of the `grid-template-columns` property on the `.grid` class it just works on larger screens. The difference is the grid's first column is now set to 240px and the rest of the content can span across 4 equal units. All of the rules that were applied to the `main-nav` class above are all still valid here as well.
+The `grid-row` and `grid-column` properties that defined the grid index placement in the mobile version still work in the 720px and wider version. By adjusting the values of the `grid-template-columns` property on the `.grid` class it just works on larger screens. The difference is the grid's first column is now set to 240px and the rest of the content can span across 4 equal units plus the 240px reserved for the nav. All of the rules that were applied to the `main-nav` class above are all still valid here as well.
 
 ### Bigger(er) Screens
 
