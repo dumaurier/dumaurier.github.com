@@ -80,7 +80,7 @@ Now that the basic grid is defined, some CSS is needed on the `main-nav` to push
 {% highlight css %}
 .main-nav{
   grid-row: 2;
-  grid-column: 1 / -1;
+  grid-column: 1;
   z-index: 200;
 
   /* new rules for off-canvas action */
