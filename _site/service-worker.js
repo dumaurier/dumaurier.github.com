@@ -23,7 +23,8 @@
                     '/static-assets/js/home.js',
                     '/static-assets/css/base-fast.css',
                     '/static-assets/images/grid-area.png',
-                    '/'
+                    '/',
+                    '/offline.html'
                 ]);
             });
     };
@@ -136,7 +137,7 @@
         }
 
         // For non-HTML requests, look in the cache first, fall back to the network
-        event.respondWith(
+        event.respondWith( 
             caches.match(request)
                 .then(function (response) {
                     // CACHE
