@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="//feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="//feed.xml" rel="self" type="application/atom+xml" /><link href="//" rel="alternate" type="text/html" /><updated>2017-05-05T02:59:43+00:00</updated><id>///</id><title type="html">Josh Vogt</title><entry><title type="html">CSS Grid Layout: Off-canvas Navigation</title><link href="//blog/css-grid-layout-off-canvas-navigation/" rel="alternate" type="text/html" title="CSS Grid Layout: Off-canvas Navigation" /><published>2017-05-02T23:27:00+00:00</published><updated>2017-05-02T23:27:00+00:00</updated><id>//blog/css-grid-layout-off-canvas-navigation</id><content type="html" xml:base="//blog/css-grid-layout-off-canvas-navigation/">&lt;header&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="//feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="//feed.xml" rel="self" type="application/atom+xml" /><link href="//" rel="alternate" type="text/html" /><updated>2017-05-10T02:26:23+00:00</updated><id>///</id><title type="html">Josh Vogt</title><entry><title type="html">CSS Grid Layout: Off-canvas Navigation</title><link href="//blog/css-grid-layout-off-canvas-navigation/" rel="alternate" type="text/html" title="CSS Grid Layout: Off-canvas Navigation" /><published>2017-05-02T23:27:00+00:00</published><updated>2017-05-02T23:27:00+00:00</updated><id>//blog/css-grid-layout-off-canvas-navigation</id><content type="html" xml:base="//blog/css-grid-layout-off-canvas-navigation/">&lt;header&gt;
 &lt;h1&gt;CSS Grid Layout: Off-canvas Navigation&lt;/h1&gt;
 May 02, 2017
 &lt;/header&gt;
@@ -101,15 +101,19 @@ May 02, 2017
 
 &lt;h3 id=&quot;biggerer-screens&quot;&gt;Bigger(er) Screens&lt;/h3&gt;
 
-&lt;p&gt;For users with really, really wide screens (or about 118em/1900px) there will be enough screen real estate to have the menu always visible. Only a single rule needs to be changed to do this:&lt;/p&gt;
+&lt;p&gt;For users with really, really wide screens (or about 118em/1900px) there will be enough screen real estate to have the menu always visible. Only two rules needs to be changed to do this:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;k&quot;&gt;@media&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;screen&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;min_width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;118em&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+  &lt;span class=&quot;nc&quot;&gt;.main-nav&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;translateX&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
   &lt;span class=&quot;nc&quot;&gt;.main-content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;nl&quot;&gt;grid-column&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;-1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;This adjusts the positioning of the &lt;code class=&quot;highlighter-rouge&quot;&gt;main-content&lt;/code&gt; area to start at the second line of the grid column axis. The previously defined position of the &lt;code class=&quot;highlighter-rouge&quot;&gt;main-nav&lt;/code&gt; is still set to &lt;code class=&quot;highlighter-rouge&quot;&gt;1&lt;/code&gt; which is where we want it to be. The only other CSS you need to apply is to hide the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;button&amp;gt;&lt;/code&gt; used to toggle the visibility of the menu.&lt;/p&gt;
+&lt;p&gt;This adjusts the positioning of the &lt;code class=&quot;highlighter-rouge&quot;&gt;main-content&lt;/code&gt; area to start at the second line of the grid column axis. The previously defined position of the &lt;code class=&quot;highlighter-rouge&quot;&gt;main-nav&lt;/code&gt; is still set to &lt;code class=&quot;highlighter-rouge&quot;&gt;1&lt;/code&gt; which is where we want it to be. The only other CSS you need to apply is to hide the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;button&amp;gt;&lt;/code&gt; used to toggle the visibility of the menu. The rule on &lt;code class=&quot;highlighter-rouge&quot;&gt;main-nav&lt;/code&gt; resets the transform on the menu so it’s always visible on the page.&lt;/p&gt;
 
 &lt;h2 id=&quot;accessibility-interactions-and-javascript&quot;&gt;Accessibility, Interactions and JavaScript.&lt;/h2&gt;
 
@@ -176,7 +180,7 @@ May 02, 2017
 
 &lt;h2 id=&quot;end&quot;&gt;End&lt;/h2&gt;
 
-&lt;p&gt;CSS Grid Layout makes creating the base layout for this pattern very easy. This is a simple empty layout. The layout of each grid area isn’t defined. Other elements within the grid can be layed out using nested grids, flexbox or any other layout method you feel like. You can see a page using this basic layout &lt;a href=&quot;http://joshvogt.co/CSS-Grid-Layout-Examples/off-canvas/&quot;&gt;here&lt;/a&gt;. I’m not a designer as should be evident the second you click the link.&lt;/p&gt;
+&lt;p&gt;CSS Grid Layout makes creating the base layout for this pattern very easy. This is a simple layout that demonstrates how much you can accomplish with CSS Grid with a little code. The layout of each grid area isn’t defined. Other elements within the grid can be layed out using nested grids, flexbox or any other layout method you feel like. You can see a page using this basic layout &lt;a href=&quot;http://joshvogt.co/CSS-Grid-Layout-Examples/off-canvas/&quot;&gt;here&lt;/a&gt;. I’m not a designer as should be evident the second you click the link.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://joshvogt.co/CSS-Grid-Layout-Examples/off-canvas/&quot;&gt;Tuber: Uber for Hot Dogs&lt;/a&gt; (Using CSS Grid Layout)&lt;/p&gt;
 

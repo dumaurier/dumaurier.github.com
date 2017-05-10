@@ -164,15 +164,19 @@ May 02, 2017
 
 <h3 id="biggerer-screens">Bigger(er) Screens</h3>
 
-<p>For users with really, really wide screens (or about 118em/1900px) there will be enough screen real estate to have the menu always visible. Only a single rule needs to be changed to do this:</p>
+<p>For users with really, really wide screens (or about 118em/1900px) there will be enough screen real estate to have the menu always visible. Only two rules needs to be changed to do this:</p>
 
 <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="k">@media</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min_width</span><span class="p">:</span> <span class="m">118em</span><span class="p">){</span>
+  <span class="nc">.main-nav</span><span class="p">{</span>
+    <span class="nl">transform</span><span class="p">:</span> <span class="n">translateX</span><span class="p">(</span><span class="m">0</span><span class="p">);</span>
+  <span class="p">}</span>
+
   <span class="nc">.main-content</span><span class="p">{</span>
     <span class="nl">grid-column</span><span class="p">:</span> <span class="m">2</span> <span class="p">/</span> <span class="m">-1</span><span class="p">;</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>This adjusts the positioning of the <code class="highlighter-rouge">main-content</code> area to start at the second line of the grid column axis. The previously defined position of the <code class="highlighter-rouge">main-nav</code> is still set to <code class="highlighter-rouge">1</code> which is where we want it to be. The only other CSS you need to apply is to hide the <code class="highlighter-rouge">&lt;button&gt;</code> used to toggle the visibility of the menu.</p>
+<p>This adjusts the positioning of the <code class="highlighter-rouge">main-content</code> area to start at the second line of the grid column axis. The previously defined position of the <code class="highlighter-rouge">main-nav</code> is still set to <code class="highlighter-rouge">1</code> which is where we want it to be. The only other CSS you need to apply is to hide the <code class="highlighter-rouge">&lt;button&gt;</code> used to toggle the visibility of the menu. The rule on <code class="highlighter-rouge">main-nav</code> resets the transform on the menu so it’s always visible on the page.</p>
 
 <h2 id="accessibility-interactions-and-javascript">Accessibility, Interactions and JavaScript.</h2>
 
@@ -239,7 +243,7 @@ May 02, 2017
 
 <h2 id="end">End</h2>
 
-<p>CSS Grid Layout makes creating the base layout for this pattern very easy. This is a simple empty layout. The layout of each grid area isn’t defined. Other elements within the grid can be layed out using nested grids, flexbox or any other layout method you feel like. You can see a page using this basic layout <a href="http://joshvogt.co/CSS-Grid-Layout-Examples/off-canvas/">here</a>. I’m not a designer as should be evident the second you click the link.</p>
+<p>CSS Grid Layout makes creating the base layout for this pattern very easy. This is a simple layout that demonstrates how much you can accomplish with CSS Grid with a little code. The layout of each grid area isn’t defined. Other elements within the grid can be layed out using nested grids, flexbox or any other layout method you feel like. You can see a page using this basic layout <a href="http://joshvogt.co/CSS-Grid-Layout-Examples/off-canvas/">here</a>. I’m not a designer as should be evident the second you click the link.</p>
 
 <p><a href="http://joshvogt.co/CSS-Grid-Layout-Examples/off-canvas/">Tuber: Uber for Hot Dogs</a> (Using CSS Grid Layout)</p>
 

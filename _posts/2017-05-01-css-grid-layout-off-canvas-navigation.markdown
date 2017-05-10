@@ -120,17 +120,21 @@ The `grid-row` and `grid-column` properties that defined the grid index placemen
 
 ### Bigger(er) Screens
 
-For users with really, really wide screens (or about 118em/1900px) there will be enough screen real estate to have the menu always visible. Only a single rule needs to be changed to do this:
+For users with really, really wide screens (or about 118em/1900px) there will be enough screen real estate to have the menu always visible. Only two rules needs to be changed to do this:
 
 {% highlight css%}
 @media screen and (min_width: 118em){
+  .main-nav{
+    transform: translateX(0);
+  }
+
   .main-content{
     grid-column: 2 / -1;
   }
 }
 {% endhighlight %}
 
-This adjusts the positioning of the `main-content` area to start at the second line of the grid column axis. The previously defined position of the `main-nav` is still set to `1` which is where we want it to be. The only other CSS you need to apply is to hide the `<button>` used to toggle the visibility of the menu.
+This adjusts the positioning of the `main-content` area to start at the second line of the grid column axis. The previously defined position of the `main-nav` is still set to `1` which is where we want it to be. The only other CSS you need to apply is to hide the `<button>` used to toggle the visibility of the menu. The rule on `main-nav` resets the transform on the menu so it's always visible on the page.
 
 
 ## Accessibility, Interactions and JavaScript.
@@ -204,9 +208,11 @@ The layout for various screen sizes has been defined by the CSS Grid including t
 
 ## End
 
-CSS Grid Layout makes creating the base layout for this pattern very easy. This is a simple empty layout. The layout of each grid area isn't defined. Other elements within the grid can be layed out using nested grids, flexbox or any other layout method you feel like. You can see a page using this basic layout [here](http://joshvogt.co/CSS-Grid-Layout-Examples/off-canvas/). I'm not a designer as should be evident the second you click the link.
+CSS Grid Layout makes creating the base layout for this pattern very easy. This is a simple layout that demonstrates how much you can accomplish with CSS Grid with a little code. The layout of each grid area isn't defined. Other elements within the grid can be layed out using nested grids, flexbox or any other layout method you feel like. You can see a page using this basic layout [here](http://joshvogt.co/CSS-Grid-Layout-Examples/off-canvas/). I'm not a designer as should be evident the second you click the link.
 
 [Tuber: Uber for Hot Dogs](http://joshvogt.co/CSS-Grid-Layout-Examples/off-canvas/) (Using CSS Grid Layout)
+
+
 
 ---
 
