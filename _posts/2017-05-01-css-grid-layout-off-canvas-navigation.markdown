@@ -6,7 +6,7 @@ permalink: /blog/:title/
 published: true
 categories: [css, css grid, layout, a11y]
 tags: [css, css grid layout]
-short-desc: How to create an responsive layout with an off-canvas using CSS Grid Layout. Also covers accessibility and hot dogs.
+short-desc: How to create a responsive layout with off-canvas navigation using CSS Grid Layout. Also covers accessibility and hot dogs.
 ---
 
 <header>
