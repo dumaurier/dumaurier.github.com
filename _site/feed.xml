@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="//feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="//feed.xml" rel="self" type="application/atom+xml" /><link href="//" rel="alternate" type="text/html" /><updated>2017-05-10T04:31:23+00:00</updated><id>///</id><title type="html">Josh Vogt</title><entry><title type="html">CSS Grid Layout: Off-canvas Navigation</title><link href="//blog/css-grid-layout-off-canvas-navigation/" rel="alternate" type="text/html" title="CSS Grid Layout: Off-canvas Navigation" /><published>2017-05-02T23:27:00+00:00</published><updated>2017-05-02T23:27:00+00:00</updated><id>//blog/css-grid-layout-off-canvas-navigation</id><content type="html" xml:base="//blog/css-grid-layout-off-canvas-navigation/">&lt;header&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="//feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="//feed.xml" rel="self" type="application/atom+xml" /><link href="//" rel="alternate" type="text/html" /><updated>2017-05-11T01:45:23+00:00</updated><id>///</id><title type="html">Josh Vogt</title><entry><title type="html">CSS Grid Layout: Off-canvas Navigation</title><link href="//blog/css-grid-layout-off-canvas-navigation/" rel="alternate" type="text/html" title="CSS Grid Layout: Off-canvas Navigation" /><published>2017-05-02T23:27:00+00:00</published><updated>2017-05-02T23:27:00+00:00</updated><id>//blog/css-grid-layout-off-canvas-navigation</id><content type="html" xml:base="//blog/css-grid-layout-off-canvas-navigation/">&lt;header&gt;
 &lt;h1&gt;CSS Grid Layout: Off-canvas Navigation&lt;/h1&gt;
 May 02, 2017
 &lt;/header&gt;
@@ -497,7 +497,7 @@ March 11, 2017
   Use &lt;code&gt;Scssify&lt;/code&gt; to inline critical Sass.&lt;/p&gt;
 &lt;/p&gt;
 &lt;p&gt;
-  If you prefer to write Sass you can still use &lt;code&gt;_includes&lt;/code&gt; folder to inline your critical CSS. You'll need to use Liquid's &lt;code&gt;capture&lt;/code&gt; tag and Jekyll's &lt;code&gt;scssify&lt;/code&gt; filter. The &lt;code&gt;scssify&lt;/code&gt; filter respects the Sass settings in Jekyll's &lt;code&gt;_config.yml&lt;/code&gt; file so if it's set to compress Sass it will compress the critical CSS in the &lt;code&gt;head&lt;/code&gt; of the document.
+  If you prefer to write Sass you can still use the &lt;code&gt;_includes&lt;/code&gt; folder to inline your critical CSS. You'll need to use Liquid's &lt;code&gt;capture&lt;/code&gt; tag and Jekyll's &lt;code&gt;scssify&lt;/code&gt; filter. The &lt;code&gt;scssify&lt;/code&gt; filter respects the Sass settings in Jekyll's &lt;code&gt;_config.yml&lt;/code&gt; file so if it's set to compress Sass it will compress the critical CSS in the &lt;code&gt;head&lt;/code&gt; of the document.
 &lt;/p&gt;
 &lt;p&gt;
   Create a Sass file in Jekyll's &lt;code&gt;_includes&lt;/code&gt; folder and write some Sass. In the &lt;code&gt;head&lt;/code&gt; of your document include the following snippet.
@@ -514,7 +514,7 @@ March 11, 2017
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;/style&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;
-   Liquid's &lt;a href=&quot;https://help.shopify.com/themes/liquid/tags/variable-tags#capture&quot;&gt;capture tag&lt;/a&gt; will store the string (in this case the Sass written the aforementioned file) as a variable that you can be referenced later. This snippet: &lt;code&gt;{{ critical | scssify }}&lt;/code&gt; will take the captured Sass and convert it CSS that is inlined in the &lt;code&gt;head&lt;/code&gt; of the document. If the &lt;code&gt;_config.yml&lt;/code&gt; is configured to compress Sass the inlined critical CSS will also be compressed.
+   Liquid's &lt;a href=&quot;https://help.shopify.com/themes/liquid/tags/variable-tags#capture&quot;&gt;capture tag&lt;/a&gt; will store the string (in this case the Sass written the aforementioned file) as a variable that can be referenced later. This snippet: &lt;code&gt;{{ critical | scssify }}&lt;/code&gt; will take the captured Sass and convert it CSS that is inlined in the &lt;code&gt;head&lt;/code&gt; of the document. If the &lt;code&gt;_config.yml&lt;/code&gt; is configured to compress Sass the inlined critical CSS will also be compressed.
 &lt;/p&gt;
 
 &lt;h2&gt;The slightly more complex way that is way more fun.&lt;/h2&gt;
@@ -545,7 +545,7 @@ March 11, 2017
 &lt;/p&gt;
 
 &lt;p&gt;
-  If you have a simple blog or a marketing site that doesn't have a lot of visual changes you can probably get away with a single critical CSS implementation. But if you're creating a series of comples landing pages the critical CSS that works great on Page One might be utterly useless on Page Two. Using Jekyll's Front Matter you can create page specific critical CSS with a little extra code.
+  If you have a simple blog or a marketing site that doesn't have a lot of visual changes you can probably get away with a single critical CSS implementation. But if you're creating a series of complex landing pages the critical CSS that works great on Page One might be utterly useless on Page Two. Using Jekyll's Front Matter you can create page specific critical CSS with a little extra code.
 &lt;/p&gt;
 
 &lt;p&gt;
@@ -558,7 +558,7 @@ March 11, 2017
 &lt;span class=&quot;o&quot;&gt;---&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;
-You'll now need to modify the &lt;code&gt;head&lt;/code&gt; of the template to react to this bit of Front Matter. You can use an &lt;em&gt;if&lt;/em&gt; statement to look for the existence of the critical Font Matter and add it the the page when Jekyll compiles the site.
+You'll now need to modify the &lt;code&gt;head&lt;/code&gt; of the template to react to this bit of Front Matter. You can use an &lt;em&gt;if&lt;/em&gt; statement to look for the existence of the critical Front Matter and add it the the page when Jekyll compiles the site.
 &lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;  
@@ -579,5 +579,5 @@ You'll now need to modify the &lt;code&gt;head&lt;/code&gt; of the template to r
 
 &lt;p&gt;
 
-&lt;/p&gt;Corrections or comment can be directed to my twitter account &lt;a href=&quot;https://twitter.com/jshvgt&quot;&gt;@jshvgt&lt;/a&gt;.&lt;/p&gt;</content><category term="jekyll" /><category term="critical css" /><summary type="html">Creating Page specific critical CSS using Gulp and Jekyll's `_includes` directory
+&lt;/p&gt;Corrections or comments can be directed to my twitter account &lt;a href=&quot;https://twitter.com/jshvgt&quot;&gt;@jshvgt&lt;/a&gt;.&lt;/p&gt;</content><category term="jekyll" /><category term="critical css" /><summary type="html">Creating Page specific critical CSS using Gulp and Jekyll's `_includes` directory
 March 11, 2017</summary></entry></feed>
