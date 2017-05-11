@@ -139,6 +139,8 @@ This adjusts the positioning of the `main-content` area to start at the second l
 
 ## Accessibility, Interactions and JavaScript.
 
+**Note (May 11, 2017):** Heydon Pickering has a very thorough article on his Inclusive Components site on [Menus and Menu Buttons](https://inclusive-components.design/menus-menu-buttons/) that you should read when implementing this pattern. I will update this post to add things I missed in the next few days.
+
 Now that the basic grid is set up and the `main-nav` has been booted off to the side we need to provide the user with a button to display it. While it's possible to handle the visibility of an element with some clever CSS hacks is rarely a good idea. Unless you're using elements with baked in interaction like `<details>` and `<summary>` you'll need some JavaScript for the interactions and to properly handle accessibility.
 
 To start, I need an element to toggle the visibility of the menu. The only option for that is the humble `<button>` element. For this demo, I'm going to place the `<button>` in the `main-header`.
