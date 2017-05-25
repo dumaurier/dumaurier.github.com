@@ -117,3 +117,8 @@ header + p{
 .article-content img{
   max-width: 100%;
 }
+
+ol li > a{
+  font-weight: 500;
+  @include font-size(1.125);
+}

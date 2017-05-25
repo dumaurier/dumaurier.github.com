@@ -29,6 +29,15 @@
             });
     };
 
+    importScripts ('/static-assets/js/workbox-google-analytics.prod.v1.0.0.js');
+
+    workbox.googleAnalytics.initialize({
+    parameterOverrides: {
+      cd1: 'offline'
+    }
+  });
+
+
     // Put an item in a specified cache
     var stashInCache = function (cacheName, request, response) {
         caches.open(cacheName)
@@ -137,7 +146,7 @@
         }
 
         // For non-HTML requests, look in the cache first, fall back to the network
-        event.respondWith( 
+        event.respondWith(
             caches.match(request)
                 .then(function (response) {
                     // CACHE
