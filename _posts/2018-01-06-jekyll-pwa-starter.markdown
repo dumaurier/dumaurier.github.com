@@ -14,7 +14,7 @@ short-desc: I've started working on a Jekyll PWA starter. It's early but it work
 {{ page.date | date: '%B %d, %Y' }}
 </header>
 
-[https://github.com/dumaurier/pwa_jekyll](Jekyll PWA Starter)
+[Jekyll PWA Starter](https://github.com/dumaurier/pwa_jekyll)
 
 
 This is an early version of a Jekyll + PWA starter I'm working on. It's still failing some basic Lighthouse tests because I haven't add all the correct icon sizes. The PWA just caches the app shell right now and does not do any runtime caching. I'm going to change this is an upcoming version.
