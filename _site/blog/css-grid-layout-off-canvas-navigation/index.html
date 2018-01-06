@@ -29,7 +29,7 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@jshvgt" />
   <meta name="twitter:title" content="CSS Grid Layout: Off-canvas Navigation" />
-  <meta name="twitter:description" content="How to create an responsive layout with an off-canvas using CSS Grid Layout. Also covers accessibility and hot dogs." />
+  <meta name="twitter:description" content="How to create a responsive layout with off-canvas navigation using CSS Grid Layout. Also covers accessibility and hot dogs." />
   <meta name="theme-color" content="#5d6c8a">
 
   
@@ -186,6 +186,8 @@ May 02, 2017
 <p>This adjusts the positioning of the <code class="highlighter-rouge">main-content</code> area to start at the second line of the grid column axis. The previously defined position of the <code class="highlighter-rouge">main-nav</code> is still set to <code class="highlighter-rouge">1</code> which is where we want it to be. The only other CSS you need to apply is to hide the <code class="highlighter-rouge">&lt;button&gt;</code> used to toggle the visibility of the menu. The rule on <code class="highlighter-rouge">main-nav</code> resets the transform on the menu so it’s always visible on the page.</p>
 
 <h2 id="accessibility-interactions-and-javascript">Accessibility, Interactions and JavaScript.</h2>
+
+<p><strong>Note (May 11, 2017):</strong> Heydon Pickering has a very thorough article on his Inclusive Components site on <a href="https://inclusive-components.design/menus-menu-buttons/">Menus and Menu Buttons</a> that you should read when implementing this pattern. I will update this post to add things I missed in the next few days.</p>
 
 <p>Now that the basic grid is set up and the <code class="highlighter-rouge">main-nav</code> has been booted off to the side we need to provide the user with a button to display it. While it’s possible to handle the visibility of an element with some clever CSS hacks is rarely a good idea. Unless you’re using elements with baked in interaction like <code class="highlighter-rouge">&lt;details&gt;</code> and <code class="highlighter-rouge">&lt;summary&gt;</code> you’ll need some JavaScript for the interactions and to properly handle accessibility.</p>
 
