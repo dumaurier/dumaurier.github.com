@@ -6,7 +6,7 @@ permalink: /blog/:title/
 published: true
 categories: [pwa, jekyll]
 tags: [pwa, jekyll]
-short-desc: I've started working on a Jekyll PWA starter. It's early but it works well. Update: I corrected the PWA errors. Everything is nice.
+short-desc: I've started working on a Jekyll PWA starter. It's early but it works well. Update Jan 8, 2018 - I corrected the PWA errors. Everything is nice.
 ---
 
 <header>
