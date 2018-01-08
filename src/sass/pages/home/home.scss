@@ -10,3 +10,25 @@ main{
   @include sans-font(body);
   flex: 1 0 auto;
 }
+
+.recent-things{
+  ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  ul li{
+    margin-top: 20px;
+  }
+
+  p{
+    margin-top: 5px;
+  }
+
+  a{
+    @include font-size(1);
+    font-weight: 600;
+    text-decoration-skip: ink;
+  }
+}
