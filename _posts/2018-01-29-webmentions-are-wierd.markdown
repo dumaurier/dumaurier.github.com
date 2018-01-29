@@ -1,7 +1,7 @@
 ---
 layout: "article"
 title: "Webmentions are nuts"
-date: "2018-01-06 09:27"
+date: "2018-01-29 09:27"
 permalink: /blog/:title/
 published: true
 categories: [pwa, jekyll]
