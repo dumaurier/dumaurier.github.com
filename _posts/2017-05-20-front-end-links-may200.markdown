@@ -9,10 +9,6 @@ tags: [css, css grid layout]
 short-desc: A list of links that I don't want to forge about for May 13 to May 20, 2017
 ---
 
-<header>
-<h1>{{page.title}}</h1>
-{{ page.date | date: '%B %d, %Y' }}
-</header>
 
 <ol>
   <li>

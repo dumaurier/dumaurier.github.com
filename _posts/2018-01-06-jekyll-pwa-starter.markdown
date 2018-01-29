@@ -9,10 +9,7 @@ tags: [pwa, jekyll]
 short-desc: I've started working on a Jekyll PWA starter. It's early but it works well. Update Jan 8, 2018 - I corrected the PWA errors. Everything is nice.
 ---
 
-<header>
-<h1>{{page.title}}</h1>
-{{ page.date | date: '%B %d, %Y' }}
-</header>
+
 
 [Jekyll PWA Starter](https://github.com/dumaurier/pwa_jekyll)
 

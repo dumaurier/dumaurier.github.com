@@ -1,9 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="//feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="//feed.xml" rel="self" type="application/atom+xml" /><link href="//" rel="alternate" type="text/html" /><updated>2018-01-08T04:59:14+00:00</updated><id>///</id><title type="html">Josh Vogt</title><entry><title type="html">Jekyll PWA Starter - early version</title><link href="//blog/jekyll-pwa-starter/" rel="alternate" type="text/html" title="Jekyll PWA Starter - early version" /><published>2018-01-06T09:27:00+00:00</published><updated>2018-01-06T09:27:00+00:00</updated><id>//blog/jekyll-pwa-starter</id><content type="html" xml:base="//blog/jekyll-pwa-starter/">&lt;header&gt;
-&lt;h1&gt;Jekyll PWA Starter - early version&lt;/h1&gt;
-January 06, 2018
-&lt;/header&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/dumaurier/pwa_jekyll&quot;&gt;Jekyll PWA Starter&lt;/a&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000//feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://localhost:4000//feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000//" rel="alternate" type="text/html" /><updated>2018-01-29T03:23:31+00:00</updated><id>http://localhost:4000///</id><title type="html">Josh Vogt</title><entry><title type="html">Jekyll PWA Starter - early version</title><link href="http://localhost:4000//blog/jekyll-pwa-starter/" rel="alternate" type="text/html" title="Jekyll PWA Starter - early version" /><published>2018-01-06T09:27:00+00:00</published><updated>2018-01-06T09:27:00+00:00</updated><id>http://localhost:4000//blog/jekyll-pwa-starter</id><content type="html" xml:base="http://localhost:4000//blog/jekyll-pwa-starter/">&lt;p&gt;&lt;a href=&quot;https://github.com/dumaurier/pwa_jekyll&quot;&gt;Jekyll PWA Starter&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;This is an early version of a Jekyll + PWA starter I’m working on. It’s still failing some basic Lighthouse tests because I haven’t add all the correct icon sizes. The PWA just caches the app shell right now and does not do any runtime caching. I’m going to change this is an upcoming version.&lt;/p&gt;
 
@@ -25,13 +20,7 @@ January 06, 2018
   &lt;li&gt;Runtime caching of pages visited&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;A demo of the site is hosted on Netlify (which is super easy to use). &lt;a href=&quot;https://pwa-jekyll-starter.netlify.com/&quot;&gt;Visit Jekyll PWA demo&lt;/a&gt;&lt;/p&gt;</content><category term="pwa" /><category term="jekyll" /><summary type="html">Jekyll PWA Starter - early version
-January 06, 2018</summary></entry><entry><title type="html">Front End Links - May 13-20, 2017</title><link href="//blog/front-end-links-may200/" rel="alternate" type="text/html" title="Front End Links - May 13-20, 2017" /><published>2017-05-12T23:27:00+00:00</published><updated>2017-05-12T23:27:00+00:00</updated><id>//blog/front-end-links-may200</id><content type="html" xml:base="//blog/front-end-links-may200/">&lt;header&gt;
-&lt;h1&gt;Front End Links - May 13-20, 2017&lt;/h1&gt;
-May 12, 2017
-&lt;/header&gt;
-
-&lt;ol&gt;
+&lt;p&gt;A demo of the site is hosted on Netlify (which is super easy to use). &lt;a href=&quot;https://pwa-jekyll-starter.netlify.com/&quot;&gt;Visit Jekyll PWA demo&lt;/a&gt;&lt;/p&gt;</content><category term="pwa" /><category term="jekyll" /><summary type="html">Jekyll PWA Starter</summary></entry><entry><title type="html">Front End Links - May 13-20, 2017</title><link href="http://localhost:4000//blog/front-end-links-may200/" rel="alternate" type="text/html" title="Front End Links - May 13-20, 2017" /><published>2017-05-12T23:27:00+00:00</published><updated>2017-05-12T23:27:00+00:00</updated><id>http://localhost:4000//blog/front-end-links-may200</id><content type="html" xml:base="http://localhost:4000//blog/front-end-links-may200/">&lt;ol&gt;
   &lt;li&gt;
     &lt;a href=&quot;https://pusher.com/sessions/meetup/london-css/css-and-the-first-meaningful-paint&quot;&gt;CSS and the First Meaningful Paint&lt;/a&gt;
     &lt;p&gt;&lt;a href=&quot;https://twitter.com/patrickhamann&quot;&gt;Patrick Hamann&lt;/a&gt; gives an in-depth talk on web perf and measuring the first meaninful paint&lt;/p&gt;
@@ -54,13 +43,27 @@ May 12, 2017
     &lt;p&gt;Heydon Pickering writes on in-depth article on creating inclusive patterns for menu and menu buttons. Great accessibility reference.
   &amp;lt;/li&amp;gt;
 &amp;lt;/ol&amp;gt;
-&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;</content><category term="css" /><category term="css grid layout" /><summary type="html">Front End Links - May 13-20, 2017
-May 12, 2017</summary></entry><entry><title type="html">CSS Grid Layout: Off-canvas Navigation</title><link href="//blog/css-grid-layout-off-canvas-navigation/" rel="alternate" type="text/html" title="CSS Grid Layout: Off-canvas Navigation" /><published>2017-05-02T23:27:00+00:00</published><updated>2017-05-02T23:27:00+00:00</updated><id>//blog/css-grid-layout-off-canvas-navigation</id><content type="html" xml:base="//blog/css-grid-layout-off-canvas-navigation/">&lt;header&gt;
-&lt;h1&gt;CSS Grid Layout: Off-canvas Navigation&lt;/h1&gt;
-May 02, 2017
-&lt;/header&gt;
-
-&lt;p&gt;Off-canvas navigation is a popular UI interaction in repsonsive design. CSS Grid Layout makes adjusting the interaction for different device widths easy thanks to its ability to overlay items.&lt;/p&gt;
+&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;</content><category term="css" /><category term="css grid layout" /><summary type="html">CSS and the First Meaningful Paint
+    Patrick Hamann gives an in-depth talk on web perf and measuring the first meaninful paint
+  
+  
+    Responsive Design for Motion
+    An article on the WebKit blog on the `prefers-reduced-motion` media query which allows CSS authors to reduce or eliminate UI animations. This is based on the Media Queries Level 5 spec.
+    
+  
+  
+  Women Who Design
+  A long list of women in the design and development community for you to follow on Twitter
+  
+  
+    Breaking out with CSS Grid Layout
+    Discussing a technique to allow certain elements to fill the viewport from within a fixed width container
+  
+  
+    Inclusive Components - Menus and Menu Buttons
+    Heydon Pickering writes on in-depth article on creating inclusive patterns for menu and menu buttons. Great accessibility reference.
+  &amp;lt;/li&amp;gt;
+&amp;lt;/ol&amp;gt;</summary></entry><entry><title type="html">CSS Grid Layout: Off-canvas Navigation</title><link href="http://localhost:4000//blog/css-grid-layout-off-canvas-navigation/" rel="alternate" type="text/html" title="CSS Grid Layout: Off-canvas Navigation" /><published>2017-05-02T23:27:00+00:00</published><updated>2017-05-02T23:27:00+00:00</updated><id>http://localhost:4000//blog/css-grid-layout-off-canvas-navigation</id><content type="html" xml:base="http://localhost:4000//blog/css-grid-layout-off-canvas-navigation/">&lt;p&gt;Off-canvas navigation is a popular UI interaction in repsonsive design. CSS Grid Layout makes adjusting the interaction for different device widths easy thanks to its ability to overlay items.&lt;/p&gt;
 
 &lt;p&gt;The final &lt;a href=&quot;/CSS-Grid-Layout-Examples/off-canvas&quot;&gt;CSS Grid Layout: Off-canvas demo&lt;/a&gt; can be accessed by clicking the link.&lt;/p&gt;
 
@@ -262,13 +265,7 @@ May 02, 2017
   &lt;li&gt;&lt;a href=&quot;https://www.mozilla.org/en-US/developer/css-grid/&quot;&gt;Mozilla - Weird CSS Grid Demo&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Corrections or comments can be directed to my twitter account &lt;a href=&quot;https://twitter.com/jshvgt&quot;&gt;@jshvgt&lt;/a&gt;.&lt;/p&gt;</content><category term="css" /><category term="css grid layout" /><summary type="html">CSS Grid Layout: Off-canvas Navigation
-May 02, 2017</summary></entry><entry><title type="html">CSS Grid Layout and Absolute Positioning</title><link href="//blog/css-grid-layout-and-absolute-positioning/" rel="alternate" type="text/html" title="CSS Grid Layout and Absolute Positioning" /><published>2017-04-26T22:46:00+00:00</published><updated>2017-04-26T22:46:00+00:00</updated><id>//blog/css-grid-layout-and-absolute-positioning</id><content type="html" xml:base="//blog/css-grid-layout-and-absolute-positioning/">&lt;header&gt;
-&lt;h1&gt;CSS Grid Layout and Absolute Positioning&lt;/h1&gt;
-April 26, 2017
-&lt;/header&gt;
-
-&lt;p&gt;A quick explanation of &lt;code class=&quot;highlighter-rouge&quot;&gt;absolute&lt;/code&gt; positioning when used with CSS Grid Layout.&lt;/p&gt;
+&lt;p&gt;Corrections or comments can be directed to my twitter account &lt;a href=&quot;https://twitter.com/jshvgt&quot;&gt;@jshvgt&lt;/a&gt;.&lt;/p&gt;</content><category term="css" /><category term="css grid layout" /><summary type="html">Off-canvas navigation is a popular UI interaction in repsonsive design. CSS Grid Layout makes adjusting the interaction for different device widths easy thanks to its ability to overlay items.</summary></entry><entry><title type="html">CSS Grid Layout and Absolute Positioning</title><link href="http://localhost:4000//blog/css-grid-layout-and-absolute-positioning/" rel="alternate" type="text/html" title="CSS Grid Layout and Absolute Positioning" /><published>2017-04-26T22:46:00+00:00</published><updated>2017-04-26T22:46:00+00:00</updated><id>http://localhost:4000//blog/css-grid-layout-and-absolute-positioning</id><content type="html" xml:base="http://localhost:4000//blog/css-grid-layout-and-absolute-positioning/">&lt;p&gt;A quick explanation of &lt;code class=&quot;highlighter-rouge&quot;&gt;absolute&lt;/code&gt; positioning when used with CSS Grid Layout.&lt;/p&gt;
 
 &lt;h2 id=&quot;position-absolute-amp-css-grid-layout&quot;&gt;position: absolute; &amp;amp; css grid layout.&lt;/h2&gt;
 
@@ -367,13 +364,7 @@ April 26, 2017
   &lt;li&gt;&lt;a href=&quot;https://www.mozilla.org/en-US/developer/css-grid/&quot;&gt;Mozilla - Weird CSS Grid Demo&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Corrections or comments can be directed to my twitter account &lt;a href=&quot;https://twitter.com/jshvgt&quot;&gt;@jshvgt&lt;/a&gt;.&lt;/p&gt;</content><category term="css" /><category term="css grid layout" /><summary type="html">CSS Grid Layout and Absolute Positioning
-April 26, 2017</summary></entry><entry><title type="html">Layout Differences Between CSS Grid Layout and Multi-Column Layout</title><link href="//blog/layout-differences-between-css-grid-layout-and-multi-column/" rel="alternate" type="text/html" title="Layout Differences Between CSS Grid Layout and Multi-Column Layout" /><published>2017-04-18T22:17:00+00:00</published><updated>2017-04-18T22:17:00+00:00</updated><id>//blog/layout-differences-between-css-grid-layout-and-multi-column</id><content type="html" xml:base="//blog/layout-differences-between-css-grid-layout-and-multi-column/">&lt;header&gt;
-&lt;h1&gt;Layout Differences Between CSS Grid Layout and Multi-Column Layout&lt;/h1&gt;
-April 18, 2017
-&lt;/header&gt;
-
-&lt;p&gt;CSS Grid Layout and Multi-Column Layout share one key feature: the ability to layout content in columns. The important difference is multi-column is best suited for laying out the content of an element while grid layout is best suited for layout a page.&lt;/p&gt;
+&lt;p&gt;Corrections or comments can be directed to my twitter account &lt;a href=&quot;https://twitter.com/jshvgt&quot;&gt;@jshvgt&lt;/a&gt;.&lt;/p&gt;</content><category term="css" /><category term="css grid layout" /><summary type="html">A quick explanation of absolute positioning when used with CSS Grid Layout.</summary></entry><entry><title type="html">Layout Differences Between CSS Grid Layout and Multi-Column Layout</title><link href="http://localhost:4000//blog/layout-differences-between-css-grid-layout-and-multi-column/" rel="alternate" type="text/html" title="Layout Differences Between CSS Grid Layout and Multi-Column Layout" /><published>2017-04-18T22:17:00+00:00</published><updated>2017-04-18T22:17:00+00:00</updated><id>http://localhost:4000//blog/layout-differences-between-css-grid-layout-and-multi-column</id><content type="html" xml:base="http://localhost:4000//blog/layout-differences-between-css-grid-layout-and-multi-column/">&lt;p&gt;CSS Grid Layout and Multi-Column Layout share one key feature: the ability to layout content in columns. The important difference is multi-column is best suited for laying out the content of an element while grid layout is best suited for layout a page.&lt;/p&gt;
 
 &lt;h2 id=&quot;refer-to-the-spec&quot;&gt;Refer to the spec.&lt;/h2&gt;
 
@@ -429,13 +420,7 @@ Grid Layout is a new layout model for CSS that has powerful abilities to control
   &lt;li&gt;&lt;a href=&quot;https://drafts.csswg.org/static/css-multicol/&quot;&gt;CSS Multi-column Layout Module Level 1&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Corrections or comment can be directed to my twitter account &lt;a href=&quot;https://twitter.com/jshvgt&quot;&gt;@jshvgt&lt;/a&gt;.&lt;/p&gt;</content><category term="css" /><category term="css grid layout" /><summary type="html">Layout Differences Between CSS Grid Layout and Multi-Column Layout
-April 18, 2017</summary></entry><entry><title type="html">CSS Grid Layout - Understanding Grid Template Areas</title><link href="//blog/css-grid-layout-grid-template-areas/" rel="alternate" type="text/html" title="CSS Grid Layout - Understanding Grid Template Areas" /><published>2017-04-02T22:13:00+00:00</published><updated>2017-04-02T22:13:00+00:00</updated><id>//blog/css-grid-layout-grid-template-areas</id><content type="html" xml:base="//blog/css-grid-layout-grid-template-areas/">&lt;header&gt;
-&lt;h1&gt;CSS Grid Layout - Understanding Grid Template Areas&lt;/h1&gt;
-April 02, 2017
-&lt;/header&gt;
-
-&lt;p&gt;This article references the new &lt;a href=&quot;https://drafts.csswg.org/css-grid/&quot;&gt;CSS Grid Layout Module&lt;/a&gt;. More specifically, it covers the &lt;a href=&quot;https://drafts.csswg.org/css-grid/#grid-template-areas-property&quot;&gt;grid-template-areas&lt;/a&gt; property. It is a powerfuly property that lets you visualize your grid in your CSS and explictly place grid items in a named area.&lt;/p&gt;
+&lt;p&gt;Corrections or comment can be directed to my twitter account &lt;a href=&quot;https://twitter.com/jshvgt&quot;&gt;@jshvgt&lt;/a&gt;.&lt;/p&gt;</content><category term="css" /><category term="css grid layout" /><summary type="html">CSS Grid Layout and Multi-Column Layout share one key feature: the ability to layout content in columns. The important difference is multi-column is best suited for laying out the content of an element while grid layout is best suited for layout a page.</summary></entry><entry><title type="html">CSS Grid Layout - Understanding Grid Template Areas</title><link href="http://localhost:4000//blog/css-grid-layout-grid-template-areas/" rel="alternate" type="text/html" title="CSS Grid Layout - Understanding Grid Template Areas" /><published>2017-04-02T22:13:00+00:00</published><updated>2017-04-02T22:13:00+00:00</updated><id>http://localhost:4000//blog/css-grid-layout-grid-template-areas</id><content type="html" xml:base="http://localhost:4000//blog/css-grid-layout-grid-template-areas/">&lt;p&gt;This article references the new &lt;a href=&quot;https://drafts.csswg.org/css-grid/&quot;&gt;CSS Grid Layout Module&lt;/a&gt;. More specifically, it covers the &lt;a href=&quot;https://drafts.csswg.org/css-grid/#grid-template-areas-property&quot;&gt;grid-template-areas&lt;/a&gt; property. It is a powerfuly property that lets you visualize your grid in your CSS and explictly place grid items in a named area.&lt;/p&gt;
 
 &lt;h2 id=&quot;defining-a-simple-grid&quot;&gt;Defining a simple grid.&lt;/h2&gt;
 
@@ -526,14 +511,7 @@ April 02, 2017
   &lt;li&gt;&lt;a href=&quot;https://www.mozilla.org/en-US/developer/css-grid/&quot;&gt;Mozilla - Weird CSS Grid Demo&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Corrections or comment can be directed to my twitter account &lt;a href=&quot;https://twitter.com/jshvgt&quot;&gt;@jshvgt&lt;/a&gt;.&lt;/p&gt;</content><category term="css" /><category term="css grid layout" /><summary type="html">CSS Grid Layout - Understanding Grid Template Areas
-April 02, 2017</summary></entry><entry><title type="html">Critical Path CSS and Jekyll</title><link href="//blog/critical-path-jekyll/" rel="alternate" type="text/html" title="Critical Path CSS and Jekyll" /><published>2017-03-11T22:16:01+00:00</published><updated>2017-03-11T22:16:01+00:00</updated><id>//blog/critical-path-jekyll</id><content type="html" xml:base="//blog/critical-path-jekyll/">&lt;header&gt;
-&lt;h1&gt;Creating Page specific critical CSS using Gulp and Jekyll's `_includes` directory&lt;/h1&gt;
-March 11, 2017
-
-&lt;/header&gt;
-
-&lt;p&gt;
+&lt;p&gt;Corrections or comment can be directed to my twitter account &lt;a href=&quot;https://twitter.com/jshvgt&quot;&gt;@jshvgt&lt;/a&gt;.&lt;/p&gt;</content><category term="css" /><category term="css grid layout" /><summary type="html">This article references the new CSS Grid Layout Module. More specifically, it covers the grid-template-areas property. It is a powerfuly property that lets you visualize your grid in your CSS and explictly place grid items in a named area.</summary></entry><entry><title type="html">Critical Path CSS and Jekyll</title><link href="http://localhost:4000//blog/critical-path-jekyll/" rel="alternate" type="text/html" title="Critical Path CSS and Jekyll" /><published>2017-03-11T22:16:01+00:00</published><updated>2017-03-11T22:16:01+00:00</updated><id>http://localhost:4000//blog/critical-path-jekyll</id><content type="html" xml:base="http://localhost:4000//blog/critical-path-jekyll/">&lt;p&gt;
   When creating landing pages, the same critical CSS wont always include the CSS you need to render the page. If you know that your above the fold content is going to be similar you can use a simpler, more generic approach.
 &lt;/p&gt;
 
@@ -638,5 +616,4 @@ You'll now need to modify the &lt;code&gt;head&lt;/code&gt; of the template to r
 
 &lt;p&gt;
 
-&lt;/p&gt;Corrections or comments can be directed to my twitter account &lt;a href=&quot;https://twitter.com/jshvgt&quot;&gt;@jshvgt&lt;/a&gt;.&lt;/p&gt;</content><category term="jekyll" /><category term="critical css" /><summary type="html">Creating Page specific critical CSS using Gulp and Jekyll's `_includes` directory
-March 11, 2017</summary></entry></feed>
+&lt;/p&gt;Corrections or comments can be directed to my twitter account &lt;a href=&quot;https://twitter.com/jshvgt&quot;&gt;@jshvgt&lt;/a&gt;.&lt;/p&gt;</content><category term="jekyll" /><category term="critical css" /><summary type="html">When creating landing pages, the same critical CSS wont always include the CSS you need to render the page. If you know that your above the fold content is going to be similar you can use a simpler, more generic approach.</summary></entry></feed>

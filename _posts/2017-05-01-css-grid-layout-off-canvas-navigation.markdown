@@ -9,10 +9,6 @@ tags: [css, css grid layout]
 short-desc: How to create a responsive layout with off-canvas navigation using CSS Grid Layout. Also covers accessibility and hot dogs.
 ---
 
-<header>
-<h1>{{page.title}}</h1>
-{{ page.date | date: '%B %d, %Y' }}
-</header>
 
 Off-canvas navigation is a popular UI interaction in repsonsive design. CSS Grid Layout makes adjusting the interaction for different device widths easy thanks to its ability to overlay items.
 

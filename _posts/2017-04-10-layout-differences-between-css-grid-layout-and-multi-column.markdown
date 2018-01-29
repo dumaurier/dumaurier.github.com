@@ -6,13 +6,9 @@ permalink: /blog/:title/
 published: true
 categories: [css, css grid, layout]
 tags: [css, css grid layout]
-short-desc: A rundown of the obvious and no so obvious differences between CSS Grid layout and Multi-Column layout. 
+short-desc: A rundown of the obvious and no so obvious differences between CSS Grid layout and Multi-Column layout.
 ---
 
-<header>
-<h1>Layout Differences Between CSS Grid Layout and Multi-Column Layout</h1>
-{{ page.date | date: '%B %d, %Y' }}
-</header>
 
 CSS Grid Layout and Multi-Column Layout share one key feature: the ability to layout content in columns. The important difference is multi-column is best suited for laying out the content of an element while grid layout is best suited for layout a page.
 

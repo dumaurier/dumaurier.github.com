@@ -9,10 +9,6 @@ tags: [css, css grid layout]
 short-desc: A quick explanation of absolute positioning and CSS Grid Layout. How do offset properties work with CSS Grid? How does it impact the placement of other grid items?
 ---
 
-<header>
-<h1>{{page.title}}</h1>
-{{ page.date | date: '%B %d, %Y' }}
-</header>
 
 A quick explanation of `absolute` positioning when used with CSS Grid Layout.
 

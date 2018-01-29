@@ -7,10 +7,6 @@ published: false
 categories: jekyll
 tags: [jekyll]
 ---
-<header>
-<h1>Testing Prose.io</h1>
-{{ page.date | date: '%B %d, %Y' }}
-</header>
 
 
 I'm testing to see how Prose.io is for editing a Jekyll blog. This will be the least compelling blog post in history.
